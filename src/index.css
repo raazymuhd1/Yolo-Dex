@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #dfc2cb;
+}
+
+.btn_trans {
+    /* background-color: #eb0e8f; */
+    backdrop-filter: blur(20px) ;
+}
