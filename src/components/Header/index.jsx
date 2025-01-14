@@ -19,7 +19,7 @@ const Header = () => {
             </div>
             <div>
                 {/* chainlist */}
-                <CustomButton handleClick={connectWallet} title="Connect Wallet" styles="bg-[#cd85af] text-[#eb0e8f] btn_trans" />
+                <CustomButton handleClick={connectWallet} title="Connect Wallet" styles="bg-[#cd85af] text-[] btn_trans" />
             </div>
         </nav>
     </header>
