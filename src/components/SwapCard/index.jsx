@@ -1,9 +1,37 @@
-import React from 'react'
+import {FC} from 'react'
+import { MdOutlineKeyboardArrowDown } from "react-icons/md"
+import {eth} from '../../assets'
 
-const SwapCard = () => {
+const SwapCard = ({title}) => {
   return (
-    <div className="w-full h-[50%] bg-[#eb0e8f] rounded-[10px]">
-        <h2 className="text-black"> From </h2>
+    <div className="w-full flex flex-col gap-[10px] h-[50%] bg-[#eb0e8f] rounded-[10px] p-[20px]">
+
+       <div className="flex items-center w-full justify-between"> 
+           <h4 className="uppercase"> {title} </h4>
+           <aside className="flex w-[150px] p-[8px] bg-main items-center gap-[10px] cursor-pointer"> 
+               {/* <img src={eth} alt="chain-logo" className="" /> */}
+               <MdOutlineKeyboardArrowDown className="text-[18px] md:text-[24px]" />
+           </aside>
+       </div>
+
+       {/* middle section */}
+       <div className="w-full flex items-center gap-[10px]">
+          <aside className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main cursor- rounded-[10px]">
+              {/* token icon */}
+              <h4 className="text-[25px] md:text-[35px] text-[#fff] uppercase"> Weth </h4>
+              <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
+          </aside>
+          <input 
+            type="text" 
+            placeholder="0" 
+            className="w-[70%] text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
+       </div>
+
+       {/* bottom section */}
+       <div className="w-full flex items-center justify-between"> 
+          <h5 className="cursor-pointer p-[10px] w-[60px] text-center bg-main rounded-[15px]"> Max </h5>
+          <h5 className=""> $3,500 </h5>
+       </div>
     </div>
   )
 }
