@@ -6,7 +6,7 @@ import { VscSettings } from "react-icons/vsc";
 const Swap = () => {
   return (
     <div className='w-full h-full flex justify-center items-center'>
-       <div className="flex w-[45%] mt-[40px] min-h-[500px] flex-col rounded-[15px] p-[20px] bg-[#cd85af]"> 
+       <div className="flex w-[45%] mt-[80px] min-h-[500px] flex-col rounded-[15px] p-[20px] bg-[#cd85af]"> 
           <div className="flex items-center justify-between w-full"> 
               <h2 className='text-[1.5rem] text-black text-[#fff]'> Swap </h2>
               <VscSettings className="text-[30px] cursor-pointer" />
