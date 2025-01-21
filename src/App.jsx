@@ -1,14 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
-import { Header, Swap } from './components'
+import { Header, Swap, TestSwap } from './components'
+import SwapContextProvider from "./components/ContextApi"
 
 const App = () => {
   return (
-    <main>
+    <SwapContextProvider>
        <Header />
        <Routes>
           <Route path='/' element={<Swap />} />
+          <Route path='/test-swap' element={<TestSwap />} />
        </Routes>
-    </main>
+    </SwapContextProvider>
   )
 }
 
