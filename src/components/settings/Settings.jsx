@@ -2,13 +2,13 @@ import React from 'react'
 import CustomButton from "../CustomButton"
 import { MdOutlineClose } from "react-icons/md";
 
-const Settings = () => {
+const Settings = ({showSettings, setShowSettings}) => {
   return (
-    <section className={`h-[50%] w-full absolute bottom-0 left-0 right-0 p-[15px] rounded-[15px] main-theme`}>
+    <section className={`h-[50%] w-full ${showSettings ? "translate-y-[0px] opacity-1" : "translate-y-[100px] opacity-0"} absolute bottom-0 left-0 right-0 p-[15px] rounded-[15px] main-theme transition-all duration-500`}>
        <div className='flex flex-col gap-[5px]'>
           <div className="w-full flex justify-between items-center">
               <h2 className="text-[#fff]"> Setting </h2>
-              <MdOutlineClose className="text-[#fff]" />
+              <MdOutlineClose className="text-[#fff] cursor-pointer" onClick={() => setShowSettings(false)} />
           </div>
           {/* close icon */}
           {/* separator */}
@@ -29,7 +29,7 @@ const Settings = () => {
             <p className="text-[#fff]"> Minutes </p>
           </aside>
 
-          <CustomButton title="Save" styles="w-full bg-secondary text-main  btn_trans"  />
+          <CustomButton title="Save" styles="w-full bg-secondary text-main btn_trans"  />
        </aside>
     </section>
   )

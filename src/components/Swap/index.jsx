@@ -1,16 +1,18 @@
-import React from 'react'
+import { useState } from 'react'
 import {SwapCard, CustomButton, Settings, Networks} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
 
 const Swap = () => {
+    const [showSettings, setShowSettings] = useState(false)
+
   return (
     <div className='w-full h-full flex justify-center'>
 
        <div className="flex relative w-[35%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
           <div className="flex items-center justify-between w-full"> 
               <h2 className='text-[1.5rem] text-black'> Swap </h2>
-              <VscSettings className="text-[30px] cursor-pointer" />
+              <VscSettings onClick={() => setShowSettings(!showSettings)} className="text-[30px] cursor-pointer" />
            </div>
 
            <div className="flex w-full h-full flex-col mt-[10px] gap-[20px]">
@@ -26,7 +28,7 @@ const Swap = () => {
                </div>
            </div>
 
-           <Settings />
+           <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
        </div>
 
     </div>
