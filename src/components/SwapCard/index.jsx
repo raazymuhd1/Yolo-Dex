@@ -18,7 +18,7 @@ const SwapCard = ({title}) => {
        <div className="w-full flex items-center gap-[10px]">
           <aside className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main cursor- rounded-[10px]">
               {/* token icon */}
-              <h4 className="text-[25px] md:text-[35px] text-[#fff] uppercase"> Weth </h4>
+              <h4 className="text-[25px] md:text-[30px] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
           </aside>
           <input 
@@ -29,7 +29,7 @@ const SwapCard = ({title}) => {
 
        {/* bottom section */}
        <div className="w-full flex items-center justify-between"> 
-          <h5 className="cursor-pointer p-[10px] w-[60px] text-center bg-main rounded-[15px]"> Max </h5>
+          <h5 className="cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main rounded-[15px]"> Max </h5>
           <h5 className=""> $3,500 </h5>
        </div>
     </div>

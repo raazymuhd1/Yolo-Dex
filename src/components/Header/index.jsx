@@ -12,7 +12,7 @@ const Header = () => {
     <header className="h-[100px] w-full">
         <nav className="w-[90%] h-full mx-auto flex items-center justify-between">
             <div className="flex items-center gap-[60px]">
-                <h2 className=" md:text-[25px] lg:text-[35px] font-bold text-[#352929] text-[16px]"> YoloSwap </h2>
+                <h2 className=" md:text-[25px] lg:text-[35px] font-bold text-[#0a0909] text-[16px]"> YoloSwap </h2>
                 <Links />
             </div>
             <div className="flex items-center gap-[20px]">

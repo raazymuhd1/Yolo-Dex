@@ -10,3 +10,18 @@ body {
     /* background-color: #eb0e8f; */
     backdrop-filter: blur(20px) ;
 }
+
+@layer {
+
+    .flex-row-center {
+        @apply flex items-center
+    }
+
+    .flex-col-center {
+        @apply flex items-center
+    }
+
+    .percentage-settings {
+        @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondary;
+    }
+}
