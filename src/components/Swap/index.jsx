@@ -1,5 +1,5 @@
 import React from 'react'
-import {SwapCard, CustomButton, Settings} from "../../components"
+import {SwapCard, CustomButton, Settings, Networks} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
 
@@ -7,7 +7,7 @@ const Swap = () => {
   return (
     <div className='w-full h-full flex justify-center'>
 
-       <div className="flex relative w-[35%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] bg-[#cd85af]"> 
+       <div className="flex relative w-[35%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
           <div className="flex items-center justify-between w-full"> 
               <h2 className='text-[1.5rem] text-black'> Swap </h2>
               <VscSettings className="text-[30px] cursor-pointer" />

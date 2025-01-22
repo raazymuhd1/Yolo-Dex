@@ -1,17 +1,14 @@
 import {FC} from 'react'
+import { Networks } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
-import {eth} from '../../assets'
 
 const SwapCard = ({title}) => {
   return (
-    <div className="w-full flex flex-col gap-[10px] h-[50%] bg-[#eb0e8f] rounded-[10px] p-[20px]">
+    <div className="w-full flex flex-col gap-[10px] h-[50%] main-theme rounded-[10px] p-[20px]">
 
        <div className="flex items-center w-full justify-between"> 
            <h4 className="uppercase"> {title} </h4>
-           <aside className="flex w-[150px] p-[8px] bg-main items-center gap-[10px] cursor-pointer"> 
-               {/* <img src={eth} alt="chain-logo" className="" /> */}
-               <MdOutlineKeyboardArrowDown className="text-[18px] md:text-[24px]" />
-           </aside>
+          <Networks />
        </div>
 
        {/* middle section */}
