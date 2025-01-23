@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import ERC20 from "../../utils/abis/ERC20.json"
-import LatestSwap from "../../utils/abis/LatestSwap.json"
+import OkuSwap from "../../utils/abis/OkuSwap.json"
 import {ethers} from "ethers"
 import { useSwapContext } from "../ContextApi" 
 
@@ -20,16 +20,16 @@ const TestSwap = () => {
              const USDT = "0x05D032ac25d322df992303dCa074EE7392C117b9";
              const USDCe = "0xe75D0fB2C24A55cA1e3F96781a2bCC7bdba058F0";
              const DAI = "0x6c851F501a3F24E29A8E39a29591cddf09369080";
-             const latestSwapAddr = "0x02110A6440fecf8Ac821F2b8001f72C8bEbA548E"
+             const okuSwapAddr = "0xD075b9531779E38487Af3C87F1D6a7362A37980D"
     
              const provider = new ethers.providers.Web3Provider(window.ethereum);
              const signer = provider.getSigner(address);
-             const coolSwap = new ethers.Contract(latestSwapAddr, LatestSwap.abi, signer)
+             const okuSwap = new ethers.Contract(okuSwapAddr, OkuSwap.abi, signer)
     
                  try {
-                     const amtOut = await mySwap.exactInput({tokenIn: inputs.tokenIn, tokenOut: inputs.tokenOut, amountIn: inputs.amountIn * 10**6})
+                     const amtOut = await okuSwap.exactInput({tokenIn: inputs.tokenIn, tokenOut: inputs.tokenOut, amountIn: inputs.amountIn * 10**18}, { gasLimit: 3000000 })
+                     console.log(inputs.amountIn*10**6)
                      console.log(amtOut)
-                     console.log(inputs)
                  } catch(err) {
                     console.log(err)
                  }
@@ -43,14 +43,14 @@ const TestSwap = () => {
              const USDT = "0x05D032ac25d322df992303dCa074EE7392C117b9";
              const USDCe = "0xe75D0fB2C24A55cA1e3F96781a2bCC7bdba058F0";
              const DAI = "0x6c851F501a3F24E29A8E39a29591cddf09369080";
-             const latestSwapAddr = "0x02110A6440fecf8Ac821F2b8001f72C8bEbA548E"
+             const okuSwapAddr = "0xD075b9531779E38487Af3C87F1D6a7362A37980D"
     
              const provider = new ethers.providers.Web3Provider(window.ethereum);
              const signer = provider.getSigner(address);
-             const latestSwap = new ethers.Contract(latestSwapAddr, LatestSwap.abi, signer)
+             const okuSwap = new ethers.Contract(okuSwapAddr, OkuSwap.abi, signer)
 
                  try {
-                     const amtOut = await mySwap.exactOutput({tokenIn: inputs.tokenIn, tokenOut: inputs.tokenOut, amountOut: inputs.amountIn*10**6}, { gasLimit: 3000000 })
+                     const amtOut = await okuSwap.exactOutput({tokenIn: inputs.tokenIn, tokenOut: inputs.tokenOut, amountOut: inputs.amountIn*10**8}, { gasLimit: 3000000 })
                      console.log(amtOut)
                      console.log(inputs)
                  } catch(err) {
@@ -61,10 +61,10 @@ const TestSwap = () => {
         }
     
     const quoteSwap = async() => {
-        const latestSwapAddr = "0x02110A6440fecf8Ac821F2b8001f72C8bEbA548E"
+        const okuSwapAddr = "0xD075b9531779E38487Af3C87F1D6a7362A37980D"
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner(address);
-        const latestSwap = new ethers.Contract(latestSwapAddr, LatestSwap.abi, signer)
+        const latestSwap = new ethers.Contract(okuSwapAddr, OkuSwap.abi, signer)
         const res = await latestSwap.getSwapQuote(inputs.tokenIn, inputs.tokenOut, inputs.amountIn);
 
         console.log(res);
@@ -76,14 +76,13 @@ const TestSwap = () => {
     }
 
     const approval = async() => {
-         const USDT = "0x05D032ac25d322df992303dCa074EE7392C117b9";
-         const latestSwapAddr = "0x02110A6440fecf8Ac821F2b8001f72C8bEbA548E"
+         const okuSwapAddr = "0xD075b9531779E38487Af3C87F1D6a7362A37980D"
 
          const provider = new ethers.providers.Web3Provider(window.ethereum);
          const signer = provider.getSigner(address);
          const erc20 = new ethers.Contract(inputs.tokenIn, ERC20.abi, signer);
 
-         const isApproved = await erc20.approve(latestSwapAddr, maxInAmt);
+         const isApproved = await erc20.approve(okuSwapAddr, inputs.amountIn*10**18);
          console.log(isApproved.hash)
     }
 
@@ -116,7 +115,7 @@ const TestSwap = () => {
                 onClick={approval}
                 className="border-none w-[50%] outline-none p-[10px] bg-main font-bold rounded-[10px]"> Approve </button>
                  <button 
-                    onClick={exactOutputSwap}
+                    onClick={exactInputSwap}
                     className="border-none w-[50%] outline-none p-[10px] bg-main font-bold rounded-[10px]"> Swap </button>  
             </div>
         </div>
