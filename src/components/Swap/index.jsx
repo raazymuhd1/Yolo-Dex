@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import {SwapCard, CustomButton, Settings, Networks} from "../../components"
+import {SwapCard, CustomButton, Settings, Networks, TokenAssets} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
 
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
+    const [showTokens, setShowTokens] = useState(false)
 
   return (
     <div className='w-full h-full flex justify-center'>
@@ -16,8 +17,8 @@ const Swap = () => {
            </div>
 
            <div className="flex w-full h-full flex-col mt-[10px] gap-[20px]">
-               <SwapCard title="From" />
-               <SwapCard title="To" />
+               <SwapCard title="From" setShowTokens={setShowTokens} />
+               <SwapCard title="To" setShowTokens={setShowTokens} />
                <div className="flex items-center justify-between">
                   <h4 className="font-semibold"> 1 WETH = 0.000 USDT ($-) </h4>
                   <h4  className="font-semibold"> Fee: -- </h4>
@@ -29,6 +30,7 @@ const Swap = () => {
            </div>
 
            <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
+           <TokenAssets showTokens={showTokens} setShowTokens={setShowTokens}  />
        </div>
 
     </div>

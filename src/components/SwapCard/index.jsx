@@ -3,8 +3,7 @@ import { Networks } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
 
-const SwapCard = ({title}) => {
-      const [showTokens, setShowTokens] = useState(false)
+const SwapCard = ({title, setShowTokens}) => {
 
   return (
     <div className="w-full flex flex-col gap-[10px] h-[50%] main-theme rounded-[10px] p-[20px]">
@@ -19,7 +18,7 @@ const SwapCard = ({title}) => {
         {/* token lists */}
           <aside
             onClick={() => setShowTokens(true)} 
-            className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main cursor- rounded-[10px]">
+            className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px] cursor-pointer">
               <img src={weth} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
               <h4 className="text-[16px] md:text-[20px] lg:text-[25px] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
