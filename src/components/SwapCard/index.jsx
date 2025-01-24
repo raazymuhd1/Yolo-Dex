@@ -1,8 +1,11 @@
-import {FC} from 'react'
+import {useState} from 'react'
 import { Networks } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
+import { weth } from "../../assets"
 
 const SwapCard = ({title}) => {
+      const [showTokens, setShowTokens] = useState(false)
+
   return (
     <div className="w-full flex flex-col gap-[10px] h-[50%] main-theme rounded-[10px] p-[20px]">
 
@@ -13,9 +16,12 @@ const SwapCard = ({title}) => {
 
        {/* middle section */}
        <div className="w-full flex items-center gap-[10px]">
-          <aside className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main cursor- rounded-[10px]">
-              {/* token icon */}
-              <h4 className="text-[25px] md:text-[30px] text-[#fff] uppercase"> Weth </h4>
+        {/* token lists */}
+          <aside
+            onClick={() => setShowTokens(true)} 
+            className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main cursor- rounded-[10px]">
+              <img src={weth} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
+              <h4 className="text-[16px] md:text-[20px] lg:text-[25px] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
           </aside>
           <input 
