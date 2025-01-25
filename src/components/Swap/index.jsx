@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import {SwapCard, CustomButton, Settings, Networks, TokenAssets} from "../../components"
+import {SwapCard, CustomButton, Settings, Networks, TokenAssets, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
 
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
     const [showTokens, setShowTokens] = useState(false)
+    const [confirmSwap, setConfirmSwap] = useState(true)
 
   return (
     <div className='w-full h-full flex justify-center'>
@@ -25,12 +26,15 @@ const Swap = () => {
                </div>
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
                   <CustomButton title={"Approve USDT"} styles="w-[50%] bg-secondary text-main btn_transcursor-pointer"   />
-                  <CustomButton title={"Swap"} styles="w-[50%] bg-secondary text-main btn_trans cursor-pointer"  />
+                  <CustomButton 
+                     handleClick={() => setConfirmSwap(true)}
+                     title={"Swap"} styles="w-[50%] bg-secondary text-main btn_trans cursor-pointer"  />
                </div>
            </div>
 
            <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
            <TokenAssets showTokens={showTokens} setShowTokens={setShowTokens}  />
+           <ConfirmSwap confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
        </div>
 
     </div>

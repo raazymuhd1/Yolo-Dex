@@ -25,7 +25,6 @@ body {
 
 @layer {
 
-
     /* display */
     .flex-row-center {
         @apply flex items-center
@@ -39,4 +38,34 @@ body {
     .percentage-settings {
         @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondary;
     }
+
+    /* transitions */
+    .transition_500 {
+        @apply  transition-all duration-500;
+    }
+
+    .fade_in_top {
+        @apply translate-y-[0px] opacity-[1];
+    }
+
+    .fade_out_btm {
+        @apply translate-y-[100px] opacity-0;
+    }
+
+    .fade_in_left {
+        @apply translate-x-[0px] opacity-[1];
+    }
+
+    .fade_out_right {
+        @apply translate-x-[620px] opacity-0;
+    }
+
+    .scale_in {
+        @apply scale-[1] opacity-[1];
+    }
+
+    .scale_out {
+        @apply scale-[0] opacity-0;
+    }
+
 }
