@@ -49,7 +49,7 @@ body {
     }
 
     .fade_out_btm {
-        @apply translate-y-[100px] opacity-0;
+        @apply translate-y-[640px] opacity-0;
     }
 
     .fade_in_left {

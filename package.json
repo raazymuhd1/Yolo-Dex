@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.3",
+    "@tanstack/react-query": "^5.64.2",
     "@thirdweb-dev/react": "^3.11.11",
     "@thirdweb-dev/sdk": "^3.10.14",
     "ethers": "^5.7.2",
@@ -20,7 +22,9 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
-    "react-scroll": "^1.8.9"
+    "react-scroll": "^1.8.9",
+    "viem": "^2.22.14",
+    "wagmi": "^2.14.9"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
