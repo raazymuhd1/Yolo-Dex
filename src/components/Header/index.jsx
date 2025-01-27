@@ -1,3 +1,4 @@
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import CustomButton from "../CustomButton"
 import Links from "../Links"
 import { MdNotificationsNone, MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -21,7 +22,8 @@ const Header = () => {
                     <img src={eth} alt="network-icons" className="w-[35px] h-[35px] rounded-[50%]" />
                     <MdOutlineKeyboardArrowDown className="text-secondary text-[20px] font-bold" />
                 </div>
-                <CustomButton handleClick={connectWallet} title={`${address.length > 0 ? `${address}` : "Connect Wallet"}`} styles="bg-[#cd85af] text-secondary btn_trans" />
+                {/* <CustomButton handleClick={connectWallet} title={`${address.length > 0 ? `${address}` : "Connect Wallet"}`} styles="bg-[#cd85af] text-secondary btn_trans" /> */}
+                <ConnectButton />
             </div>
         </nav>
     </header>
