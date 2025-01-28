@@ -11,7 +11,7 @@ const Swap = () => {
   return (
     <div className='w-full h-full flex justify-center'>
 
-       <div className="flex relative lg:w-[30%] md:w-[50%] w-[80%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
+       <div className="flex relative xl:w-[30%] lg:w-[50%] md:w-[70%] w-[80%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
           <div className="flex items-center justify-between w-full"> 
               <h2 className='text-[1.5rem] text-black'> Swap </h2>
               <VscSettings onClick={() => setShowSettings(!showSettings)} className="text-[30px] cursor-pointer" />
