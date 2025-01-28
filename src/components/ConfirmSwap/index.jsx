@@ -2,6 +2,7 @@ import React from 'react'
 import { usdt, weth } from "../../assets"
 import { MdOutlineClose } from "react-icons/md";
 import CustomButton from "../CustomButton";
+import SwapInfo from "../SwapInfo";
 
 const ConfirmSwap = ({confirmSwap, setConfirmSwap}) => {
   return (
@@ -36,11 +37,9 @@ const ConfirmSwap = ({confirmSwap, setConfirmSwap}) => {
 
       <p className="mt-[30px] text-[#fff] w-[90%]"> Output is estimated, You will receive at least 3,600, or the transaction will revert. </p>
 
-      <div className="flex flex-col items-center gap-[15px]"> 
+      <div className="flex flex-col items-center gap-[15px] mt-[10px]"> 
           {/* detail swap */}
-          <div className="flex justify-between">
-
-          </div>
+          <SwapInfo />
           <CustomButton title="Confirm Swap" styles="w-[70%] font-semibold bg-secondary text-main btn_trans cursor-pointer" />
       </div>
 

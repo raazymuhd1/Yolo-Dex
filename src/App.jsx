@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 // import {config} from "../config"
+import "./App.css"
 import { Header, Swap, TestSwap, Footer } from './components'
 import { Bridge, Pool, Stake } from "./pages"
 import SwapContextProvider from "./components/ContextApi"
