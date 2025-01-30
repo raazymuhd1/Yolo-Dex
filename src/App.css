@@ -13,4 +13,8 @@
     .swap_info_value {
         @apply font-bold text-[12px] md:text-[14px] lg:text-[16px];
     }
+
+    .swap_btns {
+        @apply w-[50%] bg-secondary text-main btn_trans cursor-pointer;
+    }
 }

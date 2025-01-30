@@ -25,10 +25,10 @@ const Swap = () => {
                   <h4  className="font-semibold"> Fee: -- </h4>
                </div>
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
-                  <CustomButton title={"Approve USDT"} styles="w-[50%] bg-secondary text-main btn_transcursor-pointer"   />
+                  <CustomButton title={"Approve USDT"} styles="swap_btns"   />
                   <CustomButton 
                      handleClick={() => setConfirmSwap(true)}
-                     title={"Swap"} styles="w-[50%] bg-secondary text-main btn_trans cursor-pointer"  />
+                     title={"Swap"} styles="swap_btns"  />
                </div>
            </div>
 
