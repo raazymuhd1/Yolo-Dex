@@ -15,6 +15,7 @@
     }
 
     .swap_btns {
-        @apply w-[50%] bg-secondary text-main btn_trans cursor-pointer;
+        @apply w-[50%] bg-secondary text-main cursor-pointer;
+        backdrop-filter: blur(20px);
     }
 }
