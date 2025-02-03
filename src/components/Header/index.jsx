@@ -10,7 +10,7 @@ const Header = () => {
     
 
   return (
-    <header className="h-[100px] w-full sticky top-0">
+    <header className="h-[100px] w-full sticky top-0 z-[9] bg-[#dfc2cb] border-b-[1px]">
         <nav className="w-[90%] h-full mx-auto flex items-center justify-between">
             <div className="flex items-center gap-[60px]">
                 <h2 className=" md:text-[25px] lg:text-[35px] font-bold text-[#0a0909] text-[16px]"> PinkySwap </h2>
