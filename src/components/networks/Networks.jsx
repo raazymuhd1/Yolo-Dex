@@ -16,7 +16,7 @@ const Networks = () => {
                 <MdOutlineKeyboardArrowDown className="text-[18px] md:text-[24px]" />
         </aside>
         <aside
-            className={`w-full flex flex-col-center overflow-y-auto transition-all duration-500 absolute top-[50px] h-[130px] rounded-[10px]`}>
+            className={`w-full flex flex-col-center overflow-y-auto transition-all duration-500 absolute top-[50px] rounded-[10px]`}>
             { networks.map(network => (
                 <aside
                     onClick={() => setShowNetworks(false)} 

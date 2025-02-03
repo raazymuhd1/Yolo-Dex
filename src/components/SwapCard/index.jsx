@@ -26,7 +26,7 @@ const SwapCard = ({title, setShowTokens}) => {
           <input 
             type="text" 
             placeholder="0" 
-            className="w-[70%] text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
+            className="w-[80%] text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
        </div>
 
        {/* bottom section */}
