@@ -1,9 +1,12 @@
 import React from 'react'
+import { Bridge } from '../../components'
 
-const Bridge = () => {
+const BridgePage = () => {
   return (
-    <div>Bridge</div>
+    <>
+      <Bridge />
+    </>
   )
 }
 
-export default Bridge
+export default BridgePage

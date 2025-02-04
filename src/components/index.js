@@ -1,6 +1,7 @@
 export { default as Header } from "./Header"
 export { default as CustomButton } from "./CustomButton"
 export { default as Swap } from "./Swap"
+export { default as Bridge } from "./Bridge"
 export { default as SwapCard } from "./SwapCard"
 export { default as ConfirmSwap } from "./ConfirmSwap"
 export { default as SwapInfo } from "./SwapInfo"

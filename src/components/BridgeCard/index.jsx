@@ -1,0 +1,23 @@
+import React from 'react'
+
+const BridgeCard = ({title}) => {
+  return (
+    <div className={`flex flex-col gap-[15px] w-full p-[15px]`}>
+        <div className='flex w-full justify-between'>
+            <h4 className='font-bold'> {title} </h4>
+            <h5 className={` ${title.toLowerCase() == "to" && "hidden"} `}> Balance: 0 <strong className='font-bold cursor-pointer'> Max </strong> </h5>
+        </div>
+        <div className="flex-row-center justify-between w-full">
+            {/* networks */}
+            <p> networks </p>
+            {/* input */}
+            <input 
+               type="text" 
+              className='w-[70%] placeholder:text-right placeholder:font-bold outline-none h-full border-none p-[10px]' 
+              placeholder='0-10' />
+        </div>
+    </div>
+  )
+}
+
+export default BridgeCard

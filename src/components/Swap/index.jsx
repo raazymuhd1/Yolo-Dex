@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {SwapCard, CustomButton, Settings, Networks, TokenAssets, ConfirmSwap} from "../../components"
+import {SwapCard, CustomButton, Settings, TokenAssets, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
 
@@ -9,7 +9,7 @@ const Swap = () => {
     const [confirmSwap, setConfirmSwap] = useState(true)
 
   return (
-    <div className='w-full h-full flex justify-center'>
+    <section className='w-full h-full flex justify-center'>
 
        <div className="flex relative xl:w-[40%] md:w-[70%] w-[80%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
           <div className="flex items-center justify-between w-full"> 
@@ -37,7 +37,7 @@ const Swap = () => {
            {/* <ConfirmSwap confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} /> */}
        </div>
 
-    </div>
+    </section>
   )
 }
 
