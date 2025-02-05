@@ -13,7 +13,7 @@ const BridgeCard = ({title}) => {
             {/* input */}
             <input 
                type="text" 
-              className='w-[70%] placeholder:text-right placeholder:font-bold outline-none h-full border-none p-[10px] bg-transparent text-[#fff] text-right' 
+              className='w-[70%] placeholder:text-right placeholder:font-bold outline-none h-full border-none p-[10px] bg-transparent text-[#fff] text-right placeholder:text-[25px] text-[25px]' 
               placeholder='0-10' />
         </div>
     </div>
