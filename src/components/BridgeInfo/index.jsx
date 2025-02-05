@@ -2,7 +2,7 @@ import React from 'react'
 
 const BridgeInfo = () => {
   return (
-    <div>BridgeInfo</div>
+    <section className={`p-[10px] rounded-[10px] border-[1px] w-full min-h-[80px]`}>BridgeInfo</section>
   )
 }
 

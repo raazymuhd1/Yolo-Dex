@@ -1,6 +1,6 @@
 import React from 'react'
 import { RiHistoryFill } from "react-icons/ri";
-import {BridgeCard, CustomButton} from '../../components';
+import {BridgeCard, CustomButton, BridgeInfo} from '../../components';
 
 const Bridge = () => {
   return (
@@ -13,6 +13,7 @@ const Bridge = () => {
                 <div className="flex w-[50%] items-center gap-[20px]">
                     <h3 className='font-bold'> Bridge </h3>
                     {/* token lists */}
+                    <h4> tokenList </h4>
                 </div>
 
                 {/* transactions history */}
@@ -23,6 +24,7 @@ const Bridge = () => {
                 <BridgeCard title="From" />
                 <BridgeCard title="To" />
                 <CustomButton title="Connect Wallet" styles="w-full text-[#fff] bg-secondary" />
+                <BridgeInfo />
             </aside>
         </div>
     </section>
