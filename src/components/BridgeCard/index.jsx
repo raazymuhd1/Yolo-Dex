@@ -1,6 +1,7 @@
-import React from 'react'
+
 
 const BridgeCard = ({title}) => {
+
   return (
     <div className={`flex flex-col gap-[15px] w-full p-[15px] second-theme rounded-[10px]`}>
         <div className='flex w-full justify-between'>
