@@ -14,7 +14,8 @@ const Swap = () => {
        <div className="flex relative xl:w-[40%] md:w-[70%] w-[80%] mt-[110px] min-h-[500px] max-h-[650px] flex-col rounded-[15px] p-[20px] second-theme"> 
           <div className="flex items-center justify-between w-full"> 
               <h2 className='text-[1.5rem] text-black'> Swap </h2>
-              <VscSettings onClick={() => setShowSettings(!showSettings)} className="text-[30px] cursor-pointer" />
+              <VscSettings 
+               onClick={() => setShowSettings(!showSettings)} className="text-[30px] cursor-pointer" />
            </div>
 
            <div className="flex w-full h-full flex-col mt-[10px] gap-[20px]">
@@ -25,10 +26,13 @@ const Swap = () => {
                   <h4  className="font-semibold"> Fee: -- </h4>
                </div>
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
-                  <CustomButton title={"Approve USDT"} styles="swap_btns"   />
+                  <CustomButton 
+                     title={"Approve USDT"} 
+                     styles="swap_btns cursor-pointer"   />
                   <CustomButton 
                      handleClick={() => setConfirmSwap(true)}
-                     title={"Swap"} styles="swap_btns"  />
+                     title="Swap"
+                     styles="swap_btns cursor-pointer"  />
                </div>
            </div>
 

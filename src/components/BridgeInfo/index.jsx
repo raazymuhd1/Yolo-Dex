@@ -22,8 +22,8 @@ const BridgeInfo = () => {
             <MdCheckCircle size={20} />
         </aside>
 
-        <MdKeyboardArrowDown size={24} className={`${showInfo ? "block" : "hidden"}`} />
-        <MdKeyboardArrowUp size={24} className={`${!showInfo ? "block" : "hidden"}`} />
+       { showInfo ? <MdKeyboardArrowUp size={24} className="cursor-pointer" /> : <MdKeyboardArrowDown size={24} className="cursor-pointer" /> }
+      
       </div>
      
        <aside className={`${showInfo ? "flex flex-col" : "hidden"}`}>

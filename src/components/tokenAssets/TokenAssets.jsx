@@ -4,7 +4,8 @@ import { MdArrowBack, MdSearch  } from "react-icons/md";
 
 const TokenAssets = ({showTokens, setShowTokens}) => {
   return (
-    <section className={`w-full h-full absolute inset-0 flex flex-col gap-[20px] ${showTokens ? "translate-x-[0px] opacity-1" : "translate-x-[680px] opacity-0"} transition-all duration-[1s] main-theme p-[15px] rounded-[15px]`}>
+    <section 
+      className={`w-full h-full absolute inset-0 flex flex-col gap-[20px] ${showTokens ? "translate-x-[0px] opacity-1" : "translate-x-[760px] opacity-0 "} transition-all duration-[1s] main-theme p-[15px] rounded-[15px]`}>
        <aside className="flex-row-center gap-[10px] text-[#fff]">
          <MdArrowBack onClick={() => setShowTokens(false)} className="text-[25px] cursor-pointer" />
          <h4 className="text-[14px] md:text-[16px] lg:text-[18px] font-semibold"> Search token </h4>
