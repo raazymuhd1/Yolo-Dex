@@ -6,10 +6,10 @@ import { weth } from "../../assets"
 const SwapCard = ({title, setShowTokens}) => {
 
   return (
-    <div className="w-full flex flex-col gap-[10px] h-[40%] main-theme rounded-[10px] p-[20px]">
+    <div className="w-full flex flex-col gap-[10px] h-[40%] bg-secondary rounded-[10px] p-[20px]">
 
        <div className="flex items-center w-full justify-between p-[5px] "> 
-           <h4 className="uppercase"> {title} </h4>
+           <h4 className="uppercase text-textWhite"> {title} </h4>
           <Networks />
        </div>
 
@@ -18,7 +18,7 @@ const SwapCard = ({title, setShowTokens}) => {
         {/* token lists */}
           <aside
             onClick={() => setShowTokens(true)} 
-            className="w-[30%] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px] cursor-pointer">
+            className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px] cursor-pointer">
               <img src={weth} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
               <h4 className="text-[16px] md:text-[20px] lg:text-[25px] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
@@ -31,8 +31,8 @@ const SwapCard = ({title, setShowTokens}) => {
 
        {/* bottom section */}
        <div className="w-full flex items-center justify-between"> 
-          <h5 className="cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main rounded-[15px]"> Max </h5>
-          <h5 className=""> $3,500 </h5>
+          <h5 className="cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-textWhite rounded-[15px]"> Max </h5>
+          <h5 className="text-textWhite"> $3,500 </h5>
        </div>
     </div>
   )

@@ -11,8 +11,8 @@ const Networks = () => {
         <aside
             onMouseEnter={() => setShowNetworks(true)}  
             className="flex w-full relative top-0 p-[8px] bg-main items-center gap-[10px] cursor-pointer rounded-[10px]"> 
-                <img src={eth} alt="chain-logo" className="w-[30px] h-[30px] rounded-[50%]" />
-                <h4> ethereum </h4>
+                <img src={eth} alt="chain-logo" className="w-[25px] h-[25px] rounded-[50%]" />
+                <h4 className="text-textWhite font-semibold text-[.9vmax]"> ethereum </h4>
                 <MdOutlineKeyboardArrowDown className="text-[18px] md:text-[24px]" />
         </aside>
         <aside

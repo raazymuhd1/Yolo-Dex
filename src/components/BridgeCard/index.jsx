@@ -3,7 +3,7 @@ import BridgeNetworks from "./BridgeNetworks"
 const BridgeCard = ({title}) => {
 
   return (
-    <div className={`flex flex-col gap-[15px] w-full p-[15px] second-theme rounded-[10px]`}>
+    <div className={`flex flex-col gap-[15px] w-full p-[15px] bg-secondary rounded-[10px]`}>
         <div className='flex w-full justify-between'>
             <h4 className='font-bold'> {title} </h4>
             <h5 className={` ${title.toLowerCase() == "to" && "hidden"} `}> Balance: 0 <strong className='font-bold cursor-pointer'> Max </strong> </h5>

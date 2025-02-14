@@ -7,8 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "main": '#cd85af',
-        "secondary": "#eb0e8f"
+        "main": '#040208',
+        "mainAlt": "#111111",
+        "secondary": "#232323",
+        "secondaryAlt": "#551921",
+        "textWhite": "#fff",
+        "textOrange": "#ff5c57"
       }
     },
   },

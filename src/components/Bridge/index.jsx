@@ -7,7 +7,7 @@ const Bridge = () => {
     <section className={`w-[90%] flex flex-col justify-center mx-auto h-[80vh]`}>
         {/* bridge main section */}
         <div 
-            className={`flex flex-col gap-[20px] h-full xl:w-[30%] mx-auto p-[15px] rounded-[10px] lg:w-[40%] w-[70%] mt-[40px] second-theme`}>
+            className={`flex flex-col gap-[20px] h-full xl:w-[30%] mx-auto p-[15px] rounded-[10px] lg:w-[40%] w-[70%] mt-[40px] bg-mainAlt`}>
             {/* bridge header */}
             <aside className="flex-row-center justify-between">
                 <div className="flex w-[50%] items-center gap-[20px]">
