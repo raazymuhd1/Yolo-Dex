@@ -6,15 +6,15 @@ import { weth } from "../../assets"
 const SwapCard = ({title, setShowTokens}) => {
 
   return (
-    <div className="w-full flex flex-col gap-[10px] h-[50%] main-theme rounded-[10px] p-[20px]">
+    <div className="w-full flex flex-col gap-[10px] h-[40%] main-theme rounded-[10px] p-[20px]">
 
-       <div className="flex items-center w-full justify-between"> 
+       <div className="flex items-center w-full justify-between p-[5px] "> 
            <h4 className="uppercase"> {title} </h4>
           <Networks />
        </div>
 
        {/* middle section */}
-       <div className="w-full flex items-center gap-[10px]">
+       <div className="w-full h-[80px] flex items-center gap-[10px]">
         {/* token lists */}
           <aside
             onClick={() => setShowTokens(true)} 
@@ -26,7 +26,7 @@ const SwapCard = ({title, setShowTokens}) => {
           <input 
             type="text" 
             placeholder="0" 
-            className="w-[80%] text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
+            className="w-[80%] h-full text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
        </div>
 
        {/* bottom section */}

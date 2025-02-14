@@ -1,4 +1,4 @@
-
+import BridgeNetworks from "./BridgeNetworks"
 
 const BridgeCard = ({title}) => {
 
@@ -10,7 +10,7 @@ const BridgeCard = ({title}) => {
         </div>
         <div className="flex-row-center justify-between w-full">
             {/* networks */}
-            <p> networks </p>
+            <BridgeNetworks />
             {/* input */}
             <input 
                type="text" 
