@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {SwapCard, CustomButton, Settings, TokenAssets, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 
-
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
     const [showTokens, setShowTokens] = useState(false)
@@ -28,11 +27,11 @@ const Swap = () => {
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
                   <CustomButton 
                      title={"Approve USDT"} 
-                     styles="bg-secondaryAlt text-textOrange cursor-pointer text-[#fff] w-[50%]"   />
+                     styles="bg-textOrange text-secondaryAlt cursor-pointer text-[#fff] w-[50%]"   />
                   <CustomButton 
                      handleClick={() => setConfirmSwap(true)}
                      title="Swap"
-                     styles="bg-secondaryAlt text-textOrange cursor-pointer text-[#fff] w-[50%]"  />
+                     styles="bg-textOrange text-secondaryAlt cursor-pointer text-[#fff] w-[50%]"  />
                </div>
            </div>
 

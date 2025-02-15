@@ -18,11 +18,11 @@ const BridgeInfo = () => {
         onClick={() => setShowInfo(!showInfo)}
         className="cursor-pointer w-full flex justify-between">
         <aside className="flex-row-center gap-[10px]">
-            <h4> Total Send </h4>
-            <MdCheckCircle size={20} />
+            <h4 className="font-semibold text-[.8vmax] text-textWhite"> Total Send </h4>
+            <MdCheckCircle size={20} className='text-textWhite' />
         </aside>
 
-       { showInfo ? <MdKeyboardArrowUp size={24} className="cursor-pointer" /> : <MdKeyboardArrowDown size={24} className="cursor-pointer" /> }
+       { showInfo ? <MdKeyboardArrowUp size={24} className="cursor-pointer text-textWhite" /> : <MdKeyboardArrowDown size={24} className="cursor-pointer text-textWhite" /> }
       
       </div>
      
@@ -33,10 +33,10 @@ const BridgeInfo = () => {
                 <div className="flex-row-center justify-between w-full">
                     <div className="flex-row-center gap-[5px]">
                     {/* icon */}
-                        <p className=''> {info.title} </p>
+                        <p className='text-textWhite font-normal text-[.8vmax]'> {info.title} </p>
                     </div>
 
-                    <h3 className="font-semibold"> {info.value} </h3>
+                    <h3 className="font-bold text-[.8vmax]  text-textWhite"> {info.value} </h3>
                 </div>
                   <div className={`h-[0.1px] w-full ${idx == 1 ? "block": "hidden"} bg-[#fff]`} />
             </div>

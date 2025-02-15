@@ -37,7 +37,7 @@ body {
 
 
     .percentage-settings {
-        @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondary;
+        @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondary cursor-pointer;
     }
 
     /* transitions */

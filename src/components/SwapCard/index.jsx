@@ -20,7 +20,7 @@ const SwapCard = ({title, setShowTokens}) => {
             onClick={() => setShowTokens(true)} 
             className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px] cursor-pointer">
               <img src={weth} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
-              <h4 className="text-[16px] md:text-[20px] lg:text-[25px] text-[#fff] uppercase"> Weth </h4>
+              <h4 className="text-[.9vmax] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
           </aside>
           <input 
