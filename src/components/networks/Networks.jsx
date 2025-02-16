@@ -16,14 +16,15 @@ const Networks = () => {
                 <MdOutlineKeyboardArrowDown className="text-[18px] md:text-[24px]" />
         </aside>
         <aside
-            className={`${showNetworks ? "translate-y-[0px] opacity-1" : "translate-y-[100px] opacity-0"} w-[150px] min-h-[fit-content] flex flex-col-center absolute top-[70px] transition-all duration-500 rounded-[10px] bg-main p-[10px]`}>
+            className={`${showNetworks ? "translate-y-[40px] opacity-1" : "translate-y-[100px] opacity-0"} w-[150px] min-h-[fit-content] flex flex-col-center absolute transition-all duration-500 rounded-[10px] bg-main p-[10px]`}>
             { networks.map(network => (
                 <aside
                     onClick={() => setShowNetworks(false)} 
                     key={network.id} 
                     className={` w-full flex items-center justify-start gap-[10px] p-[8px] cursor-pointer bg-main`}>
                     <img src={network.logo} alt="network-logo" className="w-[25px] h-[25px] rounded-[50%]" />
-                    <h4 className=""> {network.title} </h4>
+                    <h4 className="text-textWhite"> {network.title} </h4>
+                    
                 </aside>
             )) }
         </aside>

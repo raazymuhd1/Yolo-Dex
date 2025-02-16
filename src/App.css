@@ -18,4 +18,9 @@
         @apply w-[50%] bg-secondary text-main cursor-pointer;
         backdrop-filter: blur(20px);
     }
+
+    /* styled a link */
+    .active_link {
+        @apply font-semibold text-[.8vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-textOrange hover:text-secondaryAlt transition-[background_color] duration-500;
+    }
 }
