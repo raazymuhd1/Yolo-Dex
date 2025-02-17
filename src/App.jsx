@@ -10,7 +10,6 @@ const App = () => {
   return (
           <WalletProviders> 
               <SwapContextProvider>
-                {/* <main className="h-full"> */}
                   <Header />
                     <Routes>
                         <Route path='/' element={<Swap />} />
@@ -20,7 +19,6 @@ const App = () => {
                         <Route path='/pool' element={<Pool />} />
                     </Routes>
                   <Footer />
-                {/* </main> */}
               </SwapContextProvider>
           </WalletProviders>  
   )
