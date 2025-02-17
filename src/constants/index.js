@@ -1,4 +1,4 @@
-import { eth, bnb, op, arb, weth, usdt, usdc, dai, doge } from "../assets"
+import { eth, bnb, op, arb, weth, usdt, usdc, dai, doge, ava } from "../assets"
 
 export const navlinks = [
     { id: 1, title: "Swap", url: "/" },
@@ -8,11 +8,12 @@ export const navlinks = [
 ]
 
 
-const networks = [
-    { id: 0, title: "ethereum", chainId: "0", logo: eth },
-    { id: 1, title: "bsc", chainId: "0", logo: bnb },
-    { id: 2, title: "optimism", chainId: "0", logo: op },
-    { id: 3, title: "arbitrum", chainId: "0", logo: arb },
+const networkLists = [
+    { id: 0, name: "Ethereum", chainId: 1, logo: eth },
+    { id: 1, name: "Optimism", chainId: 1, logo: op },
+    { id: 2, name: "BNB Chain", chainId: 1, logo: bnb },
+    { id: 3, name: "Arbitrum", chainId: 1, logo: arb },
+    { id: 4, name: "Avalanche", chainId: 1, logo: ava },
 ]
 
 const tokens = [
@@ -24,4 +25,4 @@ const tokens = [
 ]
 
 
-export { networks, tokens }
+export { networkLists, tokens }

@@ -10,15 +10,17 @@ const App = () => {
   return (
           <WalletProviders> 
               <SwapContextProvider>
-                <Header />
-                <Routes>
-                    <Route path='/' element={<Swap />} />
-                    <Route path='/test-swap' element={<TestSwap />} />
-                    <Route path='/bridge' element={<Bridge />} />
-                    <Route path='/stake' element={<Stake />} />
-                    <Route path='/pool' element={<Pool />} />
-                </Routes>
-                <Footer />
+                {/* <main className="h-full"> */}
+                  <Header />
+                    <Routes>
+                        <Route path='/' element={<Swap />} />
+                        <Route path='/test-swap' element={<TestSwap />} />
+                        <Route path='/bridge' element={<Bridge />} />
+                        <Route path='/stake' element={<Stake />} />
+                        <Route path='/pool' element={<Pool />} />
+                    </Routes>
+                  <Footer />
+                {/* </main> */}
               </SwapContextProvider>
           </WalletProviders>  
   )

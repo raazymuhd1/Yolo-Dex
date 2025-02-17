@@ -1,5 +1,5 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import CustomButton from "../CustomButton"
+import { Networks, CustomButton } from "../../components";
 import Links from "../Links"
 import { MdNotificationsNone, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useSwapContext } from "../ContextApi"
@@ -18,11 +18,12 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-[20px]">
                 {/* chainlist */}
-                <div className="flex items-center py-[4px] px-[10px] bg-main rounded-[15px] gap-[5px] cursor-pointer"> 
+                {/* <div className="flex items-center py-[4px] px-[10px] bg-main rounded-[15px] gap-[5px] cursor-pointer"> 
                     <img src={eth} alt="network-icons" className="w-[35px] h-[35px] rounded-[50%]" />
                     <MdOutlineKeyboardArrowDown className="text-textWhite text-[20px] font-bold" />
                 </div>
-                {/* <CustomButton handleClick={connectWallet} title={`${address.length > 0 ? `${address}` : "Connect Wallet"}`} styles="bg-[#cd85af] text-secondary btn_trans" /> */}
+                 */}
+                 <Networks />
                 <ConnectButton />
             </div>
         </nav>

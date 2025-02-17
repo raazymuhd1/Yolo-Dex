@@ -10,7 +10,7 @@ const SwapInfo = () => {
       })
 
   return (
-    <section className="flex flex-col gap-[10px] min-h-[180px] w-full p-[15px] rounded-[10px] main-theme text-[#fff]">
+    <section className="flex flex-col gap-[10px] min-h-[180px] w-full p-[15px] rounded-[10px] bg-secondary text-[#fff]">
         <div className="w-full flex-row-center justify-between"> 
             <p className="swap_info_title"> Rate </p>
             <h3 className="swap_info_value"> 1 ETH = 3,200 USDT </h3>

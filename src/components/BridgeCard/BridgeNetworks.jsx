@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { networks } from '../../constants'
+import { networkLists } from '../../constants'
 import { MdKeyboardArrowDown, MdOutlineSearch, MdOutlineClose   } from "react-icons/md";
 import ether from "../../assets/images/eth.png"
 

@@ -6,11 +6,11 @@ import { weth } from "../../assets"
 const SwapCard = ({title, setShowTokens}) => {
 
   return (
-    <div className="w-full flex flex-col gap-[10px] h-[40%] bg-secondary rounded-[10px] p-[20px]">
+    <div className="w-full flex flex-col gap-[10px] h-[40%] bg-secondary rounded-[10px] p-[10px]">
 
        <div className="flex items-center w-full justify-between p-[5px] "> 
            <h4 className="uppercase text-textWhite"> {title} </h4>
-          <Networks />
+          <h3 className={`${title.toLowerCase() == "from" ? "block" : "hidden"} font-semibold text-textWhite text-[.7vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> 0 </strong> </h3>
        </div>
 
        {/* middle section */}
@@ -18,7 +18,7 @@ const SwapCard = ({title, setShowTokens}) => {
         {/* token lists */}
           <aside
             onClick={() => setShowTokens(true)} 
-            className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px] cursor-pointer">
+            className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
               <img src={weth} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
               <h4 className="text-[.9vmax] text-[#fff] uppercase"> Weth </h4>
               <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
@@ -26,7 +26,7 @@ const SwapCard = ({title, setShowTokens}) => {
           <input 
             type="text" 
             placeholder="0" 
-            className="w-[80%] h-full text-[30px] md:text-[40px] outline-none bg-transparent p-[10px] text-right placeholder:text-right text-[#fff] " />
+            className="w-[80%] h-full text-[30px] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
        </div>
 
        {/* bottom section */}
