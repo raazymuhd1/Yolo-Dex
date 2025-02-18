@@ -2,7 +2,9 @@ import {useState} from 'react'
 import { usdt } from '../../assets';
 import { RiHistoryFill } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import {BridgeCard, CustomButton, BridgeInfo} from '../../components';
+import {CustomButton} from '../../components';
+import BridgeCard from "./BridgeCard"
+import BridgeInfo from "./BridgeInfo"
 import BridgeTokens from './BridgeTokens';
 
 const Bridge = () => {
@@ -20,9 +22,9 @@ const Bridge = () => {
                     <h3 className='font-bold text-textWhite'> Bridge </h3>
                     <div 
                         onClick={() => setShowTokens(true)}
-                        className="flex-row-center justify-center w-[50%] gap-[10px] bg-secondary rounded-[8px] p-[4px] cursor-pointer">
+                        className="flex-row-center justify-center w-[fit-content] gap-[5px] bg-secondary rounded-[8px] p-[4px] cursor-pointer">
                        <img src={usdt} alt="assets" className="w-[25px] h-[25px] object-cover" />
-                       <h4 className='text-[.8vmax] font-bold text-textWhite uppercase'> Usdt </h4>
+                       <h4 className='text-[.6vmax] font-bold text-textWhite uppercase'> Usdt </h4>
                        <MdKeyboardArrowDown size={20} className="text-textWhite font-bold" />
                     </div>
                 </div>
