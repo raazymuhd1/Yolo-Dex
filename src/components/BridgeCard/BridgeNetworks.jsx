@@ -7,12 +7,12 @@ const BridgeNetworks = () => {
     const [showNetworks, updateShowNetworks] = useState(false)
 
   return (
-    <div className="w-[27%]">
+    <div className="w-[25%]">
         <aside 
             onClick={() => updateShowNetworks(!showNetworks)}
-            className="flex-row-center w-full gap-[10px] cursor-pointer py-[4px] bg-mainAlt rounded-[10px]">
+            className="flex-row-center w-full cursor-pointer py-[4px] bg-mainAlt rounded-[10px]">
             <img src={ether} alt="network" className="w-[30px] h-[30px] rounded-[50%] object-cover" />
-            <h3 className="font-semibold text-[.8vmax] text-[#fff]"> Ethereum </h3>
+            <h3 className="font-semibold text-[.8vmax] text-[#fff] uppercase"> Ethereum </h3>
             <MdKeyboardArrowDown size={20} className="text-[#fff]" />
         </aside>
 

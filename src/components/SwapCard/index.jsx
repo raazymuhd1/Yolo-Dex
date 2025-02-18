@@ -8,9 +8,12 @@ const SwapCard = ({title, setShowTokens}) => {
   return (
     <div className="w-full flex flex-col gap-[10px] h-[40%] bg-secondary rounded-[10px] p-[10px]">
 
-       <div className="flex items-center w-full justify-between p-[5px] "> 
+       <div className="flex items-center w-full justify-between p-[5px]"> 
            <h4 className="uppercase text-textWhite"> {title} </h4>
-          <h3 className={`${title.toLowerCase() == "from" ? "block" : "hidden"} font-semibold text-textWhite text-[.7vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> 0 </strong> </h3>
+           <aside className="grid w-[50%] grid-cols-[repeat(2,minmax(10%,25%))] items-center justify-end gap-[5px] ">
+              <h3 className={`${title.toLowerCase() == "from" ? "block" : "hidden"} font-semibold text-textWhite text-[.7vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> 0 </strong> </h3>
+              <h5 className={`${title.toLowerCase() == "to" && "hidden"} cursor-pointer text-[.7vmax] text-center w-[fit-content] p-[5px] bg-mainAlt font-bold text-secondaryAlt rounded-[15px]`}> Max </h5>
+           </aside>
        </div>
 
        {/* middle section */}
@@ -31,8 +34,8 @@ const SwapCard = ({title, setShowTokens}) => {
 
        {/* bottom section */}
        <div className="w-full flex items-center justify-between"> 
-          <h5 className="cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-textWhite rounded-[15px]"> Max </h5>
-          <h5 className="text-textWhite"> $3,500 </h5>
+          <h5 className="cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold"> Max </h5>
+          <h5 className="font-bold text-textWhite"> $3,500 </h5>
        </div>
     </div>
   )
