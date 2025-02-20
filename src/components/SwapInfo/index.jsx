@@ -9,28 +9,20 @@ const SwapInfo = () => {
           "Slippage Tolerance": "0.5%"
       })
 
+      const handleDetails = (title, value) => {
+          return <div className="w-full flex-row-center justify-between"> 
+            <p className="swap_info_title"> {title} </p>
+            <h3 className="swap_info_value"> { value } </h3>
+        </div>
+      }
+
   return (
     <section className="flex flex-col gap-[10px] min-h-[180px] w-full p-[15px] rounded-[10px] bg-secondary text-[#fff]">
-        <div className="w-full flex-row-center justify-between"> 
-            <p className="swap_info_title"> Rate </p>
-            <h3 className="swap_info_value"> 1 ETH = 3,200 USDT </h3>
-        </div>
-        <div className="w-full flex-row-center justify-between"> 
-            <p className="swap_info_title"> Route </p>
-            <h3 className="swap_info_value"> WETH {">"} USDT" </h3>
-        </div>
-        <div className="w-full flex-row-center justify-between"> 
-            <p className="swap_info_title"> Minimum Received </p>
-            <h3 className="swap_info_value"> 17 USDT </h3>
-        </div>
-        <div className="w-full flex-row-center justify-between"> 
-            <p className="swap_info_title"> Trading Fee </p>
-            <h3 className="swap_info_value"> 0.00000 ETH </h3>
-        </div>
-        <div className="w-full flex-row-center justify-between"> 
-            <p className="swap_info_title"> Slippage Tolerance </p>
-            <h3 className="swap_info_value"> 0.5% </h3>
-        </div>
+        { handleDetails("Rate", "1 ETH = 3,200 USDT") }
+        { handleDetails("Route", "WETH > USDT") }
+        { handleDetails("Minimum Received", "17 USDT") }
+        { handleDetails("Trading Fee", "0.00000 ETH") }
+        { handleDetails("Slippage Tolerance", "0.5%") }
     </section>
   )
 }
