@@ -51,11 +51,11 @@
 
     /* swap info */
     .swap_info_title {
-         @apply font-normal text-[14px] md:text-[16px] lg:text-[18px]; 
+         @apply font-normal text-[.8vmax]; 
     }
 
     .swap_info_value {
-        @apply font-bold text-[12px] md:text-[14px] lg:text-[16px];
+        @apply font-bold text-[.7vmax];
     }
 
     .swap_btns {
