@@ -2,7 +2,11 @@ import React from 'react'
 
 const BridgeHistory = () => {
   return (
-    <div>BridgeHistory</div>
+    <section className="fixed top-0 w-full h-screen">
+        <div className="w-[60%] mx-auto">
+          <h2> Bridge History </h2>
+        </div>
+    </section>
   )
 }
 

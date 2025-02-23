@@ -86,6 +86,11 @@ const TestSwap = () => {
          console.log(isApproved.hash)
     }
 
+   useEffect(() => {
+        document.addEventListener("mousemove", e => {
+            console.log(e.movementX)
+        })
+   }, [document])
 
   return (
     <div className="p-[20px] w-[90%] mx-auto">
@@ -119,6 +124,8 @@ const TestSwap = () => {
                     className="border-none w-[50%] outline-none p-[10px] bg-main font-bold rounded-[10px]"> Swap </button>  
             </div>
         </div>
+
+        <div className="h-[50px] w-[50px] rounded-[50%] bg-[red]" />
     </div>
   )
 }
