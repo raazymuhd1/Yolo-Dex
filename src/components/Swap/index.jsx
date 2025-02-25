@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import {SwapCard, CustomButton, Settings, TokenAssets, ConfirmSwap} from "../../components"
+import {SwapCard, CustomButton, Settings, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 import { MdSwapVerticalCircle } from "react-icons/md";
 
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
-    const [showTokens, setShowTokens] = useState(false)
     const [confirmSwap, setConfirmSwap] = useState(false)
 
   return (
@@ -19,11 +18,11 @@ const Swap = () => {
            </div>
 
            <div className="flex w-full h-[80%] flex-col items-center mt-[10px]">
-               <SwapCard title="From" setShowTokens={setShowTokens} />
+               <SwapCard title="From" />
                {/* <div className="h-[60px] w-[60px] bg-secondaryAlt rounded-[50%]"> */}
                   <MdSwapVerticalCircle size={50} className=" text-secondaryAlt cursor-pointer" />
                {/* </div> */}
-               <SwapCard title="To" setShowTokens={setShowTokens} />
+               <SwapCard title="To" />
            </div>
 
             <div className="flex w-full items-center justify-between">
@@ -42,7 +41,7 @@ const Swap = () => {
             </div>
 
            <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
-           <TokenAssets showTokens={showTokens} setShowTokens={setShowTokens}  />
+           {/* <TokenAssets showTokens={showTokens} setShowTokens={setShowTokens}  /> */}
            <ConfirmSwap confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
        </div>
 

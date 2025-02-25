@@ -17,11 +17,11 @@ const networkLists = [
 ]
 
 const tokens = [
-  { id: 0, name: "usdt", logo: usdt },
-  { id: 1, name: "usdc", logo: usdc },
-  { id: 2, name: "weth", logo: weth },
-  { id: 3, name: "dai", logo: dai },
-  { id: 4, name: "doge", logo: doge },
+  { id: 0, name: "usdt", logo: usdt, address: "0xdAC17F958D2ee523a2206206994597C13D831ec7" },
+  { id: 1, name: "usdc", logo: usdc, address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" },
+  { id: 2, name: "weth", logo: weth, address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" },
+  { id: 3, name: "dai", logo: dai, address: "0x6B175474E89094C44Da98b954EedeAC495271d0F" },
+  { id: 4, name: "doge", logo: doge, address: "" },
 ]
 
 

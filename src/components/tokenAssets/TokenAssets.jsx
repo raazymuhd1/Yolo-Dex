@@ -1,8 +1,10 @@
-import React from 'react'
+import {useEffect} from 'react'
 import { tokens } from "../../constants"
 import { MdArrowBack, MdSearch  } from "react-icons/md";
+import { useSwapContext } from '../ContextApi';
 
-const TokenAssets = ({showTokens, setShowTokens}) => {
+const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken}) => {
+
   return (
     <section 
       className={`w-full h-full absolute inset-0 flex flex-col gap-[20px] ${showTokens ? "translate-x-[0px] opacity-1" : "translate-x-[760px] opacity-0 "} transition-all duration-[1s] bg-mainAlt p-[15px] rounded-[15px]`}>
@@ -31,7 +33,16 @@ const TokenAssets = ({showTokens, setShowTokens}) => {
        <div className="w-full flex flex-col gap-[15px] overflow-y-auto"> 
            <h3 className="text-[#fff] font-semibold text-[18px] md:text-[22px]"> Select Token </h3>
            { tokens.map(token => (
-              <div key={token.id} 
+              <div 
+               onClick={() => {
+                    setSelectedToken({
+                       name: token.name,
+                       logo: token.logo,
+                       address: "0x00"
+                    })
+                    setShowTokens(false)
+               }}
+               key={token.id} 
                  className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
                  <aside className="flex-row-center gap-[10px]"> 
                      <img src={token.logo} alt="token-logo" className="w-[35px] h-[35px] rounded-[50%]" />

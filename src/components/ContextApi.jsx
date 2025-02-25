@@ -1,9 +1,15 @@
 import { createContext, useContext, useState } from "react"
+import { weth } from "../assets";
 
 const SwapContext =  createContext();
 
 const SwapContextProvider = ({ children }) => {
       const [address, setAddress] = useState("")
+      const [selectedToken, setSelectedToken] = useState({
+         name: "WETH",
+         logo: weth,
+         address: ""
+      })
 
     const connectWallet = async() => {
         if(typeof window != "undefined") {
@@ -17,7 +23,9 @@ const SwapContextProvider = ({ children }) => {
     return (
         <SwapContext.Provider value={{
             connectWallet,
-            address
+            address,
+            selectedToken,
+            setSelectedToken
         }} >
             { children }
         </SwapContext.Provider>
