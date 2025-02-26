@@ -5,6 +5,10 @@
 
 @layer {
 
+    .connect-btn {
+        @apply text-textWhite font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px];
+    }
+
        /* display */
     .flex-row-center {
         @apply flex items-center;

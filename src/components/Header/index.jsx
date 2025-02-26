@@ -1,5 +1,5 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { Networks, CustomButton } from "../../components";
+import { Networks, CustomConnectBtn } from "../../components";
 import Links from "../Links"
 import { MdNotificationsNone, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useSwapContext } from "../ContextApi"
@@ -16,16 +16,8 @@ const Header = () => {
                 <h2 className=" md:text-[25px] lg:text-[35px] font-bold text-textWhite text-[16px]"> PinkySwap </h2>
                 <Links />
             </div>
-            <div className="flex items-center gap-[20px]">
-                {/* chainlist */}
-                {/* <div className="flex items-center py-[4px] px-[10px] bg-main rounded-[15px] gap-[5px] cursor-pointer"> 
-                    <img src={eth} alt="network-icons" className="w-[35px] h-[35px] rounded-[50%]" />
-                    <MdOutlineKeyboardArrowDown className="text-textWhite text-[20px] font-bold" />
-                </div>
-                 */}
-                 <Networks />
-                <ConnectButton />
-            </div>
+            {/* <Networks /> */}
+            <CustomConnectBtn />
         </nav>
     </header>
   )

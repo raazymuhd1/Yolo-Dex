@@ -41,7 +41,6 @@ const Swap = () => {
             </div>
 
            <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
-           {/* <TokenAssets showTokens={showTokens} setShowTokens={setShowTokens}  /> */}
            <ConfirmSwap confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
        </div>
 
