@@ -1,11 +1,18 @@
 import { useState } from 'react'
-import {SwapCard, CustomButton, Settings, ConfirmSwap} from "../../components"
+import {SwapCard, SwapCard2, CustomButton, Settings, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 import { MdSwapVerticalCircle } from "react-icons/md";
 
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
     const [confirmSwap, setConfirmSwap] = useState(false)
+    const [tokenToTrade, updateTokenTrade] = useState({
+       tokenIn: "",
+       tokenOut: "",
+       amountInOrOut: ""
+    })
+
+    console.log(tokenToTrade)
 
   return (
     <section className='w-full h-full'>
@@ -18,11 +25,11 @@ const Swap = () => {
            </div>
 
            <div className="flex w-full h-[80%] flex-col items-center mt-[10px]">
-               <SwapCard title="From" />
+               <SwapCard tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
                {/* <div className="h-[60px] w-[60px] bg-secondaryAlt rounded-[50%]"> */}
                   <MdSwapVerticalCircle size={50} className=" text-secondaryAlt cursor-pointer" />
                {/* </div> */}
-               <SwapCard title="To" />
+               <SwapCard2 tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
            </div>
 
             <div className="flex w-full items-center justify-between">

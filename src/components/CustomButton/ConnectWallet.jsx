@@ -53,7 +53,7 @@ const CustomConnectBtn = () => {
                 <div className="flex gap-[12px]">
                   <button
                     onClick={openChainModal}
-                   className='flex items-center text-textOrange font-semibold text-[.7vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px] uppercase'
+                   className='flex items-center text-textOrange font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px] uppercase'
                     type="button"
                   >
                     {chain.hasIcon && (

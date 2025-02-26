@@ -38,7 +38,7 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
                     setSelectedToken({
                        name: token.name,
                        logo: token.logo,
-                       address: "0x00"
+                       address: token.address
                     })
                     setShowTokens(false)
                }}

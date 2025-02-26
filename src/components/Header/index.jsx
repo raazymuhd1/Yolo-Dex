@@ -1,9 +1,6 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Networks, CustomConnectBtn } from "../../components";
 import Links from "../Links"
-import { MdNotificationsNone, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useSwapContext } from "../ContextApi"
-import { eth } from "../../assets"
 
 const Header = () => {
      const {address, connectWallet} = useSwapContext()
