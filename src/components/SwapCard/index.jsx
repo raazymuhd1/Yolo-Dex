@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
@@ -6,6 +6,7 @@ import { useBalance, useAccount, useChainId } from 'wagmi'
 
 const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
     const [showTokens, setShowTokens] = useState(false)
+    const inputAmtRef = useRef(null);
     const [inputAmount, updateInputAmount] = useState("0")
       const [selectedToken, setSelectedToken] = useState({
              name: "WETH",
@@ -35,6 +36,11 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         updateInputAmount(value);
     }
 
+    const handlingMaxAmount = () => {
+       inputAmtRef.current.focus();
+       inputAmtRef.current.value = Number(accountBalance.data?.value) || 0;
+    }
+
   return (
     <>
       <div className="w-full flex flex-col gap-[10px] h-[20%] bg-secondary rounded-[10px] p-[10px]">
@@ -56,7 +62,8 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
                 <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
             </aside>
             <input 
-              type="text" 
+              type="text"
+              ref={inputAmtRef} 
               value={inputAmount}
               onChange={(e) => handlingInputAmt(e)}
               placeholder="0" 
@@ -67,7 +74,9 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         {/* ${title.toLowerCase() == "to" ? "justify-end" : "justify-between"} */}
         {/* ${title.toLowerCase() == "to" && "hidden"} */}
         <div className={`w-full flex items-center justify-between`}> 
-            <h5 className={`cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
+            <h5 
+              onClick={handlingMaxAmount}
+              className={`cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
             <h5 className="font-bold text-textWhite"> $3,500 </h5>
         </div>
 

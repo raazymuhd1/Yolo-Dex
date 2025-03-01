@@ -18,6 +18,8 @@ const networkLists = [
 ]
 
 
+// this tokens settings is for MAINNET
+// we could do the same thing for other networks, adding the corresponding token addresses and chainIds
 const handlingAvailableTokens = (chainId) => {
    return [
     { id: 0, name: "usdt", logo: usdt, address: "0xdAC17F958D2ee523a2206206994597C13D831ec7", tokenDetails: new Token(chainId, "0xdAC17F958D2ee523a2206206994597C13D831ec7", 6, "USDT", "Tether USD" ) },

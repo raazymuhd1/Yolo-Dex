@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.aurora-container {
+    width: 100%;
+    height: 100%;
+ }
 
 @layer {
 
@@ -20,7 +24,7 @@
 
 
     .percentage-settings {
-        @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondary cursor-pointer;
+        @apply w-[fit-content] p-[8px] rounded-[10px] bg-main text-secondaryAlt cursor-pointer;
     }
 
     /* transitions */
@@ -69,6 +73,7 @@
 
     /* styled a link */
     .active_link {
-        @apply font-semibold text-[.8vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-textOrange hover:text-secondaryAlt transition-[background_color] duration-500;
+        @apply font-semibold text-[.8vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-secondaryAlt hover:text-textOrange transition-[background_color] duration-500;
     }
+
 }

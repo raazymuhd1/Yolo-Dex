@@ -1,4 +1,4 @@
-import { Networks, CustomConnectBtn } from "../../components";
+import { CustomConnectBtn } from "../../components";
 import Links from "../Links"
 import { useSwapContext } from "../ContextApi"
 

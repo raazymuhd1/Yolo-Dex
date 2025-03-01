@@ -7,6 +7,15 @@ import { useChainId } from 'wagmi'
 const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken}) => {
    const chainId = useChainId()
 
+   const handleTokenSelection = (token) => {
+      setSelectedToken({
+            name: token.name,
+            logo: token.logo,
+            address: token.address
+      })
+      setShowTokens(false)
+   }
+
   return (
     <section 
       className={`w-full h-full absolute inset-0 flex flex-col gap-[20px] ${showTokens ? "translate-x-[0px] opacity-1" : "translate-x-[760px] opacity-0 "} transition-all duration-[1s] bg-mainAlt p-[15px] rounded-[15px]`}>
@@ -24,7 +33,9 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
 
        <div className="w-full flex-row-center gap-[15px]"> 
           { handlingAvailableTokens(chainId).map(token => (
-             <div key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
+             <div 
+               onClick={() => handleTokenSelection(token)}
+               key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
                  <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] rounded-[50%]" />
                  <p className="text-[#fff] uppercase text-[.8vmax]"> {token.name} </p>
               </div>
@@ -36,14 +47,7 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
            <h3 className="text-[#fff] font-semibold text-[18px] md:text-[22px]"> Select Token </h3>
            { handlingAvailableTokens(chainId).map(token => (
               <div 
-               onClick={() => {
-                    setSelectedToken({
-                       name: token.name,
-                       logo: token.logo,
-                       address: token.address
-                    })
-                    setShowTokens(false)
-               }}
+               onClick={() => handleTokenSelection(token)}
                key={token.id} 
                  className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
                  <aside className="flex-row-center gap-[10px]"> 
