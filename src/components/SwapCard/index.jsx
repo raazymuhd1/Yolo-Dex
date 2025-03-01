@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
-
+import { useBalance, useAccount, useChainId } from 'wagmi'
 
 const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
     const [showTokens, setShowTokens] = useState(false)
@@ -12,6 +12,15 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
              logo: weth,
              address: ""
           })
+      const user = useAccount();
+      const chainId = useChainId();
+      const accountBalance = useBalance({ 
+        address: user.address,
+        token: selectedToken.address,
+        chainId: chainId
+      })
+
+      console.log(accountBalance.data)
 
      useEffect(() => {
            const updatingTokenTrade = () => {
@@ -33,7 +42,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         <div className="flex items-center w-full justify-between p-[5px]"> 
             <h4 className="uppercase text-textWhite"> From </h4>
             {/* ${title.toLowerCase() == "from" ? "flex-row-center gap-[5px]" : "hidden"} */}
-            <h3 className={`font-semibold text-textWhite text-[.8vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> 0 </strong> </h3>
+            <h3 className={`font-semibold text-textWhite text-[.8vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> { "0" || accountBalance.data?.value } </strong> </h3>
         </div>
 
         {/* middle section */}
