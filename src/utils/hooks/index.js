@@ -5,11 +5,11 @@ import Quoter from '@uniswap/v3-periphery/artifacts/contracts/lens/Quoter.sol/Qu
 
 // #TODO: adding more details about the tokens, like, name, address, decimals, etc
 
-const handlingTradeQuoting = async(tokenIn, tokenOut, amount, poolFactoryAddr, poolFee, rpcUrl) => {
+export const handlingTradeQuoting = async(tokenIn, tokenOut, amount, poolFactoryAddr, poolFee, rpcUrl) => {
 
     const CurrentConfig = {
         rpc: {
-            local: 'http://localhost:8545',
+            // local: 'http://localhost:8545',
             mainnet: rpcUrl,
         },
         tokens: {
@@ -35,11 +35,11 @@ const handlingTradeQuoting = async(tokenIn, tokenOut, amount, poolFactoryAddr, p
     )
 
     const [token0, token1, fee, liquidity, slot0] = await Promise.all([
-        poolContract.token0(),
-        poolContract.token1(),
-        poolContract.fee(),
-        poolContract.liquidity(),
-        poolContract.slot0(),
+        currentPoolContract.token0(),
+        currentPoolContract.token1(),
+        currentPoolContract.fee(),
+        currentPoolContract.liquidity(),
+        currentPoolContract.slot0(),
     ])
     const quoterContract = new ethers.Contract(
         QUOTER_CONTRACT_ADDRESS,
@@ -47,7 +47,9 @@ const handlingTradeQuoting = async(tokenIn, tokenOut, amount, poolFactoryAddr, p
         provider
     )
 
-    const quotedAmountOut = await quoterContract.callStatic.quoteExactInputSingle(
+    
+
+    const quotedAmountOut = await quoterContract.callStatic.quoteExactInput(
         token0,
         token1,
         fee,
@@ -57,4 +59,6 @@ const handlingTradeQuoting = async(tokenIn, tokenOut, amount, poolFactoryAddr, p
         ).toString(),
         0
     )
+
+    console.log(quotedAmountOut)
 }

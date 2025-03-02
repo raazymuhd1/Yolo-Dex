@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react"
 import { weth } from "../assets";
+import { handlingAvailableTokens } from "../constants";
 
 const SwapContext =  createContext();
 
@@ -10,7 +11,7 @@ const SwapContextProvider = ({ children }) => {
          logo: weth,
          address: ""
       })
-      const [quoteTrade, setQuoteTrade] = useState({tokenIn: null, tokenOut: null, amountIn: "", isQuoted: false});
+      const [quoteTrade, setQuoteTrade] = useState({tokenIn: handlingAvailableTokens[0], tokenOut: handlingAvailableTokens[1], amountIn: "", isQuoted: false});
 
       console.log(quoteTrade)
 

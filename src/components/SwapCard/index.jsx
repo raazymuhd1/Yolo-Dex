@@ -4,6 +4,7 @@ import { useSwapContext } from '../ContextApi'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
+import { handlingTradeQuoting } from "../../utils/hooks"
 
 const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
     const inputAmtRef = useRef(null);
@@ -27,13 +28,16 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
       console.log(accountBalance.data)
 
      useEffect(() => {
-           const updatingTokenTrade = () => {
+           const updatingTokenTrade = async() => {
                updateTokenTrade({ ...tokenToTrade, tokenIn: selectedToken?.address, amountInOrOut: inputAmount });
                setQuoteTrade({ ...quoteTrade, tokenIn: selectedToken?.tokenDetails, amountIn: inputAmount})
+
+               await handlingTradeQuoting(quoteTrade.tokenIn, quoteTrade.tokenOut, quoteTrade.amountIn, "0x1F98431c8aD98523631AE4a59f267346ea31F984", "3000", "https://eth-mainnet.g.alchemy.com/v2/ebG2qNqkQ9BTV4EPazA-enTIlymdZaZ0");
            }
 
            updatingTokenTrade()
     }, [selectedToken, inputAmount])
+
 
     function handlingInputAmt(e) {
         const value = e.target.value;

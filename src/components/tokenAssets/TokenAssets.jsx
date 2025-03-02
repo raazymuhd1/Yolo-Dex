@@ -7,6 +7,8 @@ import { useChainId } from 'wagmi'
 const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken}) => {
    const chainId = useChainId()
 
+   console.log("chainId", chainId);
+
    const handleTokenSelection = (token) => {
       setSelectedToken({
             name: token.name,

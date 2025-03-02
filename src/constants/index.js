@@ -18,7 +18,7 @@ const networkLists = [
 ]
 
 
-// this tokens settings is for MAINNET
+// these tokens setting is for MAINNET
 // we could do the same thing for other networks, adding the corresponding token addresses and chainIds
 const handlingAvailableTokens = (chainId) => {
    return [
