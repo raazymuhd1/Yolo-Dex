@@ -10,7 +10,9 @@ const SwapContextProvider = ({ children }) => {
          logo: weth,
          address: ""
       })
-      const [quoteTrade, setQuoteTrade] = useState({tokenIn: "", tokenOut: "", amountOut: ""})
+      const [quoteTrade, setQuoteTrade] = useState({tokenIn: null, tokenOut: null, amountIn: "", isQuoted: false});
+
+      console.log(quoteTrade)
 
     const connectWallet = async() => {
         if(typeof window != "undefined") {

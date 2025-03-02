@@ -1,17 +1,20 @@
 import {useState, useEffect, useRef} from 'react'
+import { useBalance, useAccount, useChainId } from 'wagmi'
+import { useSwapContext } from '../ContextApi'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
-import { useBalance, useAccount, useChainId } from 'wagmi'
 
 const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
-    const [showTokens, setShowTokens] = useState(false)
     const inputAmtRef = useRef(null);
+    const [showTokens, setShowTokens] = useState(false)
+    const {quoteTrade, setQuoteTrade} = useSwapContext()
     const [inputAmount, updateInputAmount] = useState("0")
-      const [selectedToken, setSelectedToken] = useState({
+    const [selectedToken, setSelectedToken] = useState({
              name: "WETH",
              logo: weth,
-             address: ""
+             address: "",
+             tokenDetails: null
           })
       const user = useAccount();
       const chainId = useChainId();
@@ -26,6 +29,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
      useEffect(() => {
            const updatingTokenTrade = () => {
                updateTokenTrade({ ...tokenToTrade, tokenIn: selectedToken?.address, amountInOrOut: inputAmount });
+               setQuoteTrade({ ...quoteTrade, tokenIn: selectedToken?.tokenDetails, amountIn: inputAmount})
            }
 
            updatingTokenTrade()
@@ -34,6 +38,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
     function handlingInputAmt(e) {
         const value = e.target.value;
         updateInputAmount(value);
+        setQuoteTrade({ ...quoteTrade, isQuoted: true})
     }
 
     const handlingMaxAmount = () => {

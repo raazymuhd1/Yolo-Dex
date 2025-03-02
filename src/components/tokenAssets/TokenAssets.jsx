@@ -11,7 +11,8 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
       setSelectedToken({
             name: token.name,
             logo: token.logo,
-            address: token.address
+            address: token.address,
+            tokenDetails: token.tokenDetails
       })
       setShowTokens(false)
    }

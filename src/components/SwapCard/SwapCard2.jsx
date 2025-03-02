@@ -1,11 +1,14 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { weth } from "../../assets"
-
+import { useSwapContext } from "../ContextApi"
 
 const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
     const [showTokens, setShowTokens] = useState(false)
+    const [inputAmount, updateInputAmount] = useState("")
+    const inputRef = useRef(null);
+    const { quoteTrade } = useSwapContext()
       const [selectedToken, setSelectedToken] = useState({
              name: "WETH",
              logo: weth,
@@ -15,10 +18,20 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
      useEffect(() => {
            const updatingTokenTrade = () => {
                updateTokenTrade({ ...tokenToTrade, tokenOut: selectedToken?.address })
+              //  make an input focus when user type the amountIn on the first input card
+              if(quoteTrade.isQuoted) {
+                  inputRef.current.value = "10"
+                  console.log(inputRef.current)
+              }
            }
 
            updatingTokenTrade()
-      }, [selectedToken])
+      }, [selectedToken, quoteTrade])
+
+    function handlingInputAmt(e) {
+        const value = e.target.value;
+        updateInputAmount(value);
+    }
 
   return (
     <>
@@ -40,6 +53,9 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
                 <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
             </aside>
             <input 
+              ref={inputRef}
+              value={inputAmount}
+              onChange={handlingInputAmt}
               type="text" 
               placeholder="0" 
               className="w-[80%] h-full text-[30px] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
