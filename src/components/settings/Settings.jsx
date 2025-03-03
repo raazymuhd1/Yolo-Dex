@@ -20,7 +20,7 @@ const Settings = ({showSettings, setShowSettings}) => {
 
 
   return (
-    <section className={`h-[50%] w-full ${showSettings ? "block translate-y-[0px] opacity-1" : "translate-y-[340px]"} absolute bottom-0 left-0 p-[15px] rounded-[15px] bg-mainAlt transition_500`}>
+    <section className={`h-[50%] w-full ${showSettings ? "block translate-y-[-30px] opacity-1" : "translate-y-[340px]"} absolute bottom-0 left-0 p-[15px] rounded-[15px] bg-mainAlt transition_500`}>
        <div className='flex flex-col gap-[5px]'>
           <div className="w-full flex justify-between items-center">
               <h2 className="text-[#fff]"> Setting </h2>

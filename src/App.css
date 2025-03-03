@@ -73,7 +73,7 @@
 
     /* styled a link */
     .active_link {
-        @apply font-semibold text-[.8vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-secondaryAlt hover:text-textOrange transition-[background_color] duration-500;
+        @apply font-semibold text-[.9vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-secondaryAlt hover:text-textOrange transition-[background_color] duration-500;
     }
 
 }

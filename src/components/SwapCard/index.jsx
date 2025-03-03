@@ -52,12 +52,12 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
 
   return (
     <>
-      <div className="w-full flex flex-col gap-[10px] h-[20%] bg-secondary rounded-[10px] p-[10px]">
+      <div className="w-full flex flex-col gap-[5px] bg-secondary rounded-[10px] p-[10px]">
 
         <div className="flex items-center w-full justify-between p-[5px]"> 
-            <h4 className="uppercase text-textWhite"> From </h4>
+            <h4 className="uppercase text-textWhite text-[.9vmax]"> From </h4>
             {/* ${title.toLowerCase() == "from" ? "flex-row-center gap-[5px]" : "hidden"} */}
-            <h3 className={`font-semibold text-textWhite text-[.8vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> { "0" || accountBalance.data?.value } </strong> </h3>
+            <h3 className={`font-semibold text-textWhite text-[.7vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.9vmax]"> { "0" || accountBalance.data?.value } </strong> </h3>
         </div>
 
         {/* middle section */}
@@ -65,10 +65,10 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
           {/* token lists */}
             <aside
               onClick={() => setShowTokens(true)} 
-              className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
+              className="w-[fit-content] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[6px] bg-main rounded-[10px]  cursor-pointer">
                 <img src={selectedToken?.logo} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
                 <h4 className="text-[.9vmax] text-[#fff] uppercase"> {selectedToken?.name} </h4>
-                <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
+                <MdOutlineKeyboardArrowDown className="text-[2vmax] text-[#fff]" />
             </aside>
             <input 
               type="text"
@@ -76,7 +76,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
               value={inputAmount}
               onChange={(e) => handlingInputAmt(e)}
               placeholder="0" 
-              className="w-[80%] h-full text-[30px] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
+              className="w-[80%] h-fulld outline-none text-right placeholder:text-right text-[#fff] bg-transparent placeholder:text-[2vmax] text-[2vmax]" />
         </div>
 
         {/* bottom section */}
@@ -85,8 +85,8 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         <div className={`w-full flex items-center justify-between`}> 
             <h5 
               onClick={handlingMaxAmount}
-              className={`cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
-            <h5 className="font-bold text-textWhite"> $3,500 </h5>
+              className={`cursor-pointer p-[5px] text-[.7vmax] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
+            <h5 className="font-bold text-textWhite text-[.8vmax]"> $3,500 </h5>
         </div>
 
 

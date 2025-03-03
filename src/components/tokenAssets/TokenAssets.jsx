@@ -40,14 +40,14 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
                onClick={() => handleTokenSelection(token)}
                key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
                  <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] rounded-[50%]" />
-                 <p className="text-[#fff] uppercase text-[.8vmax]"> {token.name} </p>
+                 <p className="text-[#fff] uppercase text-[.7vmax]"> {token.name} </p>
               </div>
           )) }
        </div>
 
        {/* token lists */}
        <div className="w-full flex flex-col gap-[15px] overflow-y-auto"> 
-           <h3 className="text-[#fff] font-semibold text-[18px] md:text-[22px]"> Select Token </h3>
+           <h3 className="text-[#fff] font-semibold text-[.8vmax]"> Select Token </h3>
            { handlingAvailableTokens(chainId).map(token => (
               <div 
                onClick={() => handleTokenSelection(token)}
@@ -55,7 +55,7 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
                  className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
                  <aside className="flex-row-center gap-[10px]"> 
                      <img src={token.logo} alt="token-logo" className="w-[35px] h-[35px] rounded-[50%]" />
-                    <p className="uppercase text-[16px] md:text-[18px] lg:text-[22px]"> {token.name} </p>
+                    <p className="uppercase text-[.9vmax]"> {token.name} </p>
                  </aside>
 
                  <h4 className="font-semibold text-[16px] md:text-[20px]"> 0 </h4>

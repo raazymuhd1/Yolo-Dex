@@ -12,10 +12,10 @@ const ConfirmSwap = ({tokenToTrade, confirmSwap, setConfirmSwap}) => {
 
       <aside className="flex flex-col gap-[20px]"> 
           <div className="flex items-center justify-between text-[#fff]"> 
-              <h3 className="font-semibold text-[18px] md:text-[22px] lg:text-[24px]"> Confirm swap </h3>
+              <h3 className="font-semibold text-[1vmax]"> Confirm swap </h3>
               <MdOutlineClose 
                 onClick={() => setConfirmSwap(false)} 
-                className="text-[20px] md:text-[28px] cursor-pointer " />
+                className="text-[1vmax] cursor-pointer " />
           </div>
 
           <div className="w-full flex flex-col gap-[15px]"> 
@@ -39,7 +39,7 @@ const ConfirmSwap = ({tokenToTrade, confirmSwap, setConfirmSwap}) => {
           </div>
       </aside>
 
-      <p className="mt-[30px] text-[#fff] w-[90%]"> Output is estimated, You will receive at least 3,600, or the transaction will revert. </p>
+      <p className="mt-[30px] text-[#fff] xl:text-[.8vmax] text-[1vmax] w-[90%]"> Output is estimated, You will receive at least 3,600, or the transaction will revert. </p>
 
       <div className="flex flex-col items-center gap-[15px] mt-[10px]"> 
           {/* detail swap */}

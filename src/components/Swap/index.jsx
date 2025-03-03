@@ -23,25 +23,25 @@ const Swap = () => {
     console.log(tokenToTrade)
 
   return (
-      <section className='w-full h-full relative top-0'>
+      <section className='w-full '>
 
-         <div className="flex mx-auto h-[80%] xl:w-[30%] md:w-[70%] w-[80%] mt-[110px] flex-col rounded-[15px] bg-mainAlt p-[20px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
+         <div className="flex h-full mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[110px] flex-col rounded-[15px] bg-mainAlt p-[20px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
             <div className="flex items-center justify-between w-full"> 
-               <h2 className='text-[1.5rem] text-textWhite'> Swap </h2>
+               <h2 className='text-[1vmax] text-textWhite'> Swap </h2>
                <VscSettings 
-                  onClick={() => setShowSettings(!showSettings)} className="text-[30px] cursor-pointer text-textWhite" />
+                  onClick={() => setShowSettings(!showSettings)} className="text-[1vmax] cursor-pointer text-textWhite" />
             </div>
 
             <div className="flex w-full h-[80%] flex-col items-center mt-[10px]">
                   <SwapCard tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
                   {/* <div className="h-[60px] w-[60px] bg-secondaryAlt rounded-[50%]"> */}
-                     <MdSwapVerticalCircle size={50} className=" text-secondaryAlt cursor-pointer" />
+                     <MdSwapVerticalCircle size={40} className=" text-secondaryAlt cursor-pointer" />
                   {/* </div> */}
                   <SwapCard2 tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
             </div>
 
                <div className="flex w-full items-center justify-between">
-                     <h4 className="font-semibold text-textWhite"> 1 WETH = 0.000 USDT ($-) </h4>
+                     <h4 className="font-semibold text-textWhite uppercase"> 1 { tokenToTrade.tokenIn.name } = 0.000 {tokenToTrade.tokenOut.name} ($-) </h4>
                      <h4  className="font-semibold text-textWhite"> Fee: -- </h4>
                </div>
 
