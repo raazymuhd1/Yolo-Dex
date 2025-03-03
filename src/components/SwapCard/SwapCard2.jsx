@@ -17,7 +17,8 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
 
      useEffect(() => {
            const updatingTokenTrade = () => {
-               updateTokenTrade({ ...tokenToTrade, tokenOut: selectedToken?.address })
+              updateTokenTrade({ ...tokenToTrade, tokenOut: { name: selectedToken.name, logo: selectedToken.logo, amount: inputAmount }});
+
               //  make an input focus when user type the amountIn on the first input card
               if(quoteTrade.isQuoted) {
                   inputRef.current.value = "10"

@@ -8,9 +8,16 @@ const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
     const [confirmSwap, setConfirmSwap] = useState(false)
     const [tokenToTrade, updateTokenTrade] = useState({
-       tokenIn: "",
-       tokenOut: "",
-       amountInOrOut: ""
+       tokenIn: {
+         logo: "",
+         name: "",
+         amount: ""
+       },
+       tokenOut: {
+          logo: "",
+          name: "",
+          amount: ""
+       }
     })
 
     console.log(tokenToTrade)
@@ -49,7 +56,7 @@ const Swap = () => {
                </div>
 
             <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
-            <ConfirmSwap confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
+            <ConfirmSwap tokenToTrade={tokenToTrade} confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
          </div>
 
          <Aurora

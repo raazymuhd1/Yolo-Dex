@@ -29,10 +29,10 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
 
      useEffect(() => {
            const updatingTokenTrade = async() => {
-               updateTokenTrade({ ...tokenToTrade, tokenIn: selectedToken?.address, amountInOrOut: inputAmount });
+               updateTokenTrade({ ...tokenToTrade, tokenIn: { name: selectedToken.name, logo: selectedToken.logo, amount: inputAmount }});
                setQuoteTrade({ ...quoteTrade, tokenIn: selectedToken?.tokenDetails, amountIn: inputAmount})
 
-               await handlingTradeQuoting(quoteTrade.tokenIn, quoteTrade.tokenOut, quoteTrade.amountIn, "0x1F98431c8aD98523631AE4a59f267346ea31F984", "3000", "https://eth-mainnet.g.alchemy.com/v2/ebG2qNqkQ9BTV4EPazA-enTIlymdZaZ0");
+               await handlingTradeQuoting(quoteTrade.tokenIn, quoteTrade.tokenOut, quoteTrade.amountIn, user.address, "0x1F98431c8aD98523631AE4a59f267346ea31F984", "3000", "https://eth-mainnet.g.alchemy.com/v2/ebG2qNqkQ9BTV4EPazA-enTIlymdZaZ0");
            }
 
            updatingTokenTrade()
