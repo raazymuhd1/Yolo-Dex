@@ -5,16 +5,15 @@ import { MdOutlineClose } from "react-icons/md";
 
 const presetSlippagePercentage = ["5", "1", "2"]
 
-const Settings = ({showSettings, setShowSettings}) => {
+const Settings = ({showSettings, setShowSettings, setSlippage, slippage}) => {
      const slippageRef = useRef(null)
      const presetSlippageRef = useRef(null)
-     const [slippageTol, setSlippageTol] = useState('');
 
-     const handlingSlippagePercentage = () => {
+     const handlingSlippagePercentage = (percent) => {
          if(slippageRef.current) {
             slippageRef.current.focus();
-            slippageRef.current.value = presetSlippageRef.current.textContent;
-            console.log(presetSlippageRef.current)
+            setSlippage(percent)
+            console.log(slippage)
          }
      }
 
@@ -36,12 +35,12 @@ const Settings = ({showSettings, setShowSettings}) => {
              { presetSlippagePercentage.map((percent, idx) => (
                 <p
                   ref={presetSlippageRef} 
-                  key={idx} onClick={handlingSlippagePercentage} className="percentage-settings">{percent}%</p>
+                  key={idx} onClick={() => handlingSlippagePercentage(percent)} className="percentage-settings">{percent}%</p>
              )) }
             <input
               ref={slippageRef} 
-              value={slippageTol}
-              onChange={(e) => setSlippageTol(e.target.value)}
+              value={slippage}
+              onChange={(e) => setSlippage(e.target.value)}
               type="text" placeholder="0%" className="w-[100px] bg-main placeholder:text-secondaryAlt p-[8px] rounded-[10px] text-[#fff] border-none outline-none" />
           </aside>
 
@@ -51,7 +50,9 @@ const Settings = ({showSettings, setShowSettings}) => {
             <p className="text-[#fff]"> Minutes </p>
           </aside>
 
-          <CustomButton title="Save" styles="w-full bg-secondary text-secondaryAlt bg-textOrange"  />
+          <CustomButton 
+            handleClick={() => setShowSettings(false)}
+            title="Save" styles="w-full bg-secondary text-secondaryAlt bg-textOrange"  />
        </aside>
     </section>
   )

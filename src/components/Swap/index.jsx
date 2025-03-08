@@ -13,6 +13,7 @@ const Swap = () => {
     const { quoteTrade } = useSwapContext();
     const account = useAccount();
     const [confirmSwap, setConfirmSwap] = useState(false)
+    const [slippage, setSlippage] = useState("0");
     const [tokenToTrade, updateTokenTrade] = useState({
        tokenIn: {
          logo: "",
@@ -27,6 +28,9 @@ const Swap = () => {
        }
     })
 
+   /**
+    * @dev approving the spender to spend the amount of token
+    */
    function tokenApproval(token, amount) {
       console.log(token, amount)
 
@@ -72,7 +76,7 @@ const Swap = () => {
                      styles="bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]"  />
                </div>
 
-            <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
+            <Settings slippage={slippage} setSlippage={setSlippage} showSettings={showSettings} setShowSettings={setShowSettings} />
             <ConfirmSwap tokenToTrade={tokenToTrade} confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
          </div>
 
