@@ -18,6 +18,7 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
      useEffect(() => {
            const updatingTokenTrade = () => {
               updateTokenTrade({ ...tokenToTrade, tokenOut: { name: selectedToken.name, logo: selectedToken.logo, amount: inputAmount }});
+              
 
               //  make an input focus when user type the amountIn on the first input card
               if(quoteTrade.isQuoted) {
@@ -40,7 +41,6 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
 
         <div className="flex items-center w-full justify-between p-[5px]"> 
             <h4 className="uppercase text-textWhite"> To </h4>
-            {/* <h3 className={`${title.toLowerCase() == "from" ? "flex-row-center gap-[5px]" : "hidden"} font-semibold text-textWhite text-[.8vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.7vmax]"> 0 </strong> </h3> */}
         </div>
 
         {/* middle section */}
@@ -62,9 +62,6 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
               className="w-[80%] h-full text-[30px] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
         </div>
 
-        {/* bottom section */}
-         {/* ${title.toLowerCase() == "to" ? "justify-end" : "justify-between"} */}
-        {/* ${title.toLowerCase() == "to" && "hidden"} */}
         <div className={`w-full flex items-center justify-between`}> 
             <h5 className={`cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
             <h5 className="font-bold text-textWhite"> $3,500 </h5>

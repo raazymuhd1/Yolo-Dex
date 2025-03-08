@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useWriteContract, useAccount } from 'wagmi'
 import { erc20Abi } from 'viem';
 import {SwapCard, SwapCard2, CustomButton, Settings, ConfirmSwap} from "../../components"
@@ -14,6 +14,7 @@ const Swap = () => {
     const account = useAccount();
     const [confirmSwap, setConfirmSwap] = useState(false)
     const [slippage, setSlippage] = useState("0");
+    const [isAmountEmpty, updateIsAmountEmpty] = useState(false);
     const [tokenToTrade, updateTokenTrade] = useState({
        tokenIn: {
          logo: "",
@@ -27,6 +28,19 @@ const Swap = () => {
           amount: ""
        }
     })
+
+    console.log(isAmountEmpty)
+    console.log(tokenToTrade)
+
+   
+    useEffect(() => {
+       const handledBtnDisable = () => {
+          const isEmpty = tokenToTrade.tokenIn.amount == 0 && tokenToTrade.tokenOut.amount == 0 ? true : false ;
+          updateIsAmountEmpty(isEmpty);
+       }
+
+       handledBtnDisable()
+    }, [tokenToTrade.tokenIn, tokenToTrade.tokenOut]);
 
    /**
     * @dev approving the spender to spend the amount of token
@@ -66,14 +80,16 @@ const Swap = () => {
                </div>
 
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
-                  <CustomButton 
+                  <CustomButton
+                     isDisabled={isAmountEmpty ? true : false} 
                      title={`Approve ${tokenToTrade.tokenIn.name}`} 
                      handleClick={() => tokenApproval(tokenToTrade.tokenIn.address, quoteTrade?.amountIn)}
-                     styles="bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]"   />
-                  <CustomButton 
-                     handleClick={() => setConfirmSwap(true)}
+                     styles={`${tokenToTrade.tokenIn.amount} bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]`}   />
+                  <CustomButton
+                     isDisabled={isAmountEmpty ? true : false} 
                      title="Swap"
-                     styles="bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]"  />
+                     handleClick={() => setConfirmSwap(true)}
+                     styles={`bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]`}  />
                </div>
 
             <Settings slippage={slippage} setSlippage={setSlippage} showSettings={showSettings} setShowSettings={setShowSettings} />
