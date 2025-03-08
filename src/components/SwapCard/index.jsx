@@ -1,5 +1,7 @@
 import {useState, useEffect, useRef} from 'react'
-import { useBalance, useAccount, useChainId } from 'wagmi'
+import { ethers } from 'ethers'
+import { useBalance, useAccount, useChainId, useReadContract } from 'wagmi'
+import { erc20Abi } from 'viem'
 import { useSwapContext } from '../ContextApi'
 import { TokenAssets } from "../../components"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
@@ -17,6 +19,11 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
              address: "",
              tokenDetails: null
           })
+      const tokenDecimals = useReadContract({
+          abi: erc20Abi,
+          address: selectedToken.address,
+          functionName: "decimals"
+      })
       const user = useAccount();
       const chainId = useChainId();
       const accountBalance = useBalance({ 
@@ -25,14 +32,11 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         chainId: chainId
       })
 
-      console.log(accountBalance.data)
-
      useEffect(() => {
            const updatingTokenTrade = async() => {
-               updateTokenTrade({ ...tokenToTrade, tokenIn: { name: selectedToken.name, logo: selectedToken.logo, amount: inputAmount }});
-               setQuoteTrade({ ...quoteTrade, tokenIn: selectedToken?.tokenDetails, amountIn: inputAmount})
-
-               await handlingTradeQuoting(quoteTrade.tokenIn, quoteTrade.tokenOut, quoteTrade.amountIn, user.address, "0x1F98431c8aD98523631AE4a59f267346ea31F984", "3000", "https://eth-mainnet.g.alchemy.com/v2/ebG2qNqkQ9BTV4EPazA-enTIlymdZaZ0");
+               updateTokenTrade({ ...tokenToTrade, tokenIn: { name: selectedToken.name, logo: selectedToken.logo, amount: inputAmount, address: selectedToken.address }});
+               setQuoteTrade({ ...quoteTrade, tokenIn: selectedToken?.tokenDetails, amountIn: tokenDecimals.data == 6 ? inputAmount * 1e6 : tokenDecimals.data == 8 ? inputAmount : tokenDecimals.data == 18 ? inputAmount : inputAmount})
+             
            }
 
            updatingTokenTrade()

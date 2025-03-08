@@ -1,17 +1,24 @@
 import { useState } from 'react'
+import { useWriteContract, useAccount } from 'wagmi'
+import { erc20Abi } from 'viem';
 import {SwapCard, SwapCard2, CustomButton, Settings, ConfirmSwap} from "../../components"
 import { VscSettings } from "react-icons/vsc";
 import { MdSwapVerticalCircle } from "react-icons/md";
+import { useSwapContext } from "../ContextApi";
 import Aurora from "../ui/Aurora"
 
 const Swap = () => {
     const [showSettings, setShowSettings] = useState(false)
+    const {writeContract} = useWriteContract();
+    const { quoteTrade } = useSwapContext();
+    const account = useAccount();
     const [confirmSwap, setConfirmSwap] = useState(false)
     const [tokenToTrade, updateTokenTrade] = useState({
        tokenIn: {
          logo: "",
          name: "",
-         amount: ""
+         amount: "",
+         address: ""
        },
        tokenOut: {
           logo: "",
@@ -20,7 +27,16 @@ const Swap = () => {
        }
     })
 
-    console.log(tokenToTrade)
+   function tokenApproval(token, amount) {
+      console.log(token, amount)
+
+      writeContract({
+         abi: erc20Abi,
+         address: token,
+         functionName: 'approve',
+         args: [account.address, amount],
+      })
+   }
 
   return (
       <section className='w-full '>
@@ -47,12 +63,13 @@ const Swap = () => {
 
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
                   <CustomButton 
-                     title={"Approve USDT"} 
-                     styles="bg-secondaryAlt text-textOrange cursor-pointer text-[#fff] w-[50%]"   />
+                     title={`Approve ${tokenToTrade.tokenIn.name}`} 
+                     handleClick={() => tokenApproval(tokenToTrade.tokenIn.address, quoteTrade?.amountIn)}
+                     styles="bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]"   />
                   <CustomButton 
                      handleClick={() => setConfirmSwap(true)}
                      title="Swap"
-                     styles="bg-secondaryAlt text-textOrange cursor-pointer text-[#fff] w-[50%]"  />
+                     styles="bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]"  />
                </div>
 
             <Settings showSettings={showSettings} setShowSettings={setShowSettings} />
