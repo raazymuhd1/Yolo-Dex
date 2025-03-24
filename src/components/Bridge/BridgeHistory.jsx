@@ -1,10 +1,10 @@
 import React from 'react'
 
-const BridgeHistory = () => {
+const BridgeHistory = ({ showHistory, setShowHistory }) => {
   return (
-    <section className="fixed top-0 w-full h-screen">
+    <section className={`${!showHistory && "hidden"} absolute top-0 right-0 w-full h-screen`}>
         <div className="w-[60%] mx-auto">
-          <h2>  </h2>
+          <h2> Transactions History </h2>
         </div>
     </section>
   )

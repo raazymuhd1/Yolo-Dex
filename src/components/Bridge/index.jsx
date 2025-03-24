@@ -5,10 +5,12 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import {CustomButton} from '../../components';
 import BridgeCard from "./BridgeCard"
 import BridgeInfo from "./BridgeInfo"
+import BridgeHistory from './BridgeHistory';
 import BridgeTokens from './BridgeTokens';
 
 const Bridge = () => {
         const [showTokens, setShowTokens] = useState(false)
+        const [showHistory, setShowHistory] = useState(false)
 
   return (
     <section className={`w-full h-full`}>
@@ -41,6 +43,7 @@ const Bridge = () => {
             </aside>
 
             <BridgeTokens setShowTokens={setShowTokens} showTokens={showTokens} />
+            <BridgeHistory { ...{ showHistory, setShowHistory } } />
         </div>
     </section>
   )
