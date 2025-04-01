@@ -7,6 +7,11 @@
     height: 100%;
  }
 
+.dark_glass_bg {
+    background-color: rgba(11, 11, 12, 0.7);
+    backdrop-filter: blur(10px);
+}
+
 @layer {
 
     .connect-btn {

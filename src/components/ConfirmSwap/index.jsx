@@ -1,5 +1,4 @@
 import React from 'react'
-import { usdt, weth } from "../../assets"
 import { MdOutlineClose } from "react-icons/md";
 import CustomButton from "../CustomButton";
 import SwapInfo from "../SwapInfo";
