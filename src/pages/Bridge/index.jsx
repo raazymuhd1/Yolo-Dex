@@ -3,7 +3,9 @@ import { Bridge } from '../../components'
 
 const BridgePage = () => {
   return (
-      <Bridge />
+      <section className=''>
+         <Bridge />
+      </section>
   )
 }
 

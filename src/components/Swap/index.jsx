@@ -57,7 +57,7 @@ const Swap = () => {
    }
 
   return (
-      <section className='w-full '>
+      <section className='w-full h-full'>
 
          <div className="flex h-full mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[110px] flex-col rounded-[15px] bg-mainAlt p-[20px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
             <div className="flex items-center justify-between w-full"> 
