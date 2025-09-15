@@ -13,11 +13,11 @@ const Bridge = () => {
         const [showHistory, setShowHistory] = useState(false)
 
   return (
-    <section className={`w-full h-full`}>
+    <section className={`w-full h-[max-content]`}>
         {/* bridge main section */}
 
         <div 
-            className={`flex flex-col gap-[20px] h-full xl:w-[30%] mx-auto p-[15px] rounded-[10px] lg:w-[40%] w-[70%] mt-[100px] bg-mainAlt overflow-hidden relative top-0`}>
+            className={`flex flex-col gap-[20px] xl:w-[30%] mx-auto p-[15px] rounded-[10px] lg:w-[40%] w-[70%] mt-[100px] bg-mainAlt overflow-hidden relative top-0`}>
             {/* bridge header */}
             <aside className="flex-row-center w-full justify-between">
                 <div className="flex w-[50%] items-center gap-[20px]">
@@ -35,7 +35,7 @@ const Bridge = () => {
                 <RiHistoryFill size={24} className='w-[18px] md:w-[30px] font-bold text-textWhite cursor-pointer' />
             </aside>
 
-            <aside className='flex h-full w-full flex-col gap-[10px]'>
+            <aside className='flex h-[fit-content] w-full flex-col gap-[10px]'>
                 <BridgeCard title="From" />
                 <BridgeCard title="To" />
                 <CustomButton title="Connect Wallet" styles="w-full h-[40px] bg-secondaryAlt text-textOrange text-[#fff] bg-secondary" />

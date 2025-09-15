@@ -57,7 +57,7 @@ const Swap = () => {
    }
 
   return (
-      <section className='w-full h-full'>
+      <section className='w-full h-[fit-content]'>
 
          <div className="flex h-full mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[110px] flex-col rounded-[15px] bg-mainAlt p-[20px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
             <div className="flex items-center justify-between w-full"> 
@@ -96,11 +96,12 @@ const Swap = () => {
             <ConfirmSwap tokenToTrade={tokenToTrade} confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
          </div>
 
+         {/* external animations */}
          <Aurora
-               colorStops={["#551921", "#FF94B4", "#551921"]}
-               blend={1}
-               amplitude={1.0}
-               speed={0.5} 
+            colorStops={["#551921", "#FF94B4", "#551921"]}
+            blend={1}
+            amplitude={1.0}
+            speed={0.5} 
          />
 
       </section>

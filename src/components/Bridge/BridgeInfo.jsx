@@ -13,7 +13,7 @@ const BridgeInfo = () => {
       const [showInfo, setShowInfo] = useState(false)
 
   return (
-    <section className={`w-full`}>
+    <section className={`w-full h-[fit-content]`}>
       <div 
         onClick={() => setShowInfo(!showInfo)}
         className="cursor-pointer w-full flex justify-between">
@@ -26,7 +26,7 @@ const BridgeInfo = () => {
       
       </div>
      
-       <aside className={` ${showInfo ? "flex flex-col opacity-[1] translate-y-[0px]" : "opacity-[0] "} border-[1px] p-[10px] rounded-[10px]`}>
+       <aside className={` ${showInfo ? "flex flex-col opacity-[1] translate-y-[0px]" : "opacity-[0] hidden"} border-[1px] p-[10px] rounded-[10px]`}>
           { bridgeInfos.map((info, idx) => (
             <div key={info.id} 
                 className={`flex flex-col gap-[10px]`}>

@@ -3,7 +3,7 @@ import { Bridge } from '../../components'
 
 const BridgePage = () => {
   return (
-      <section className=''>
+      <section className='h-[60vh]'>
          <Bridge />
       </section>
   )
