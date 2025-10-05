@@ -1,11 +1,11 @@
-"use client"
-import React from 'react'
 import { handlingAvailableTokens } from "../../constants"
 import { MdArrowBack, MdSearch  } from "react-icons/md";
 import { useChainId } from 'wagmi'
+import { useSwapContext } from "../ContextApi";
 
 const BridgeTokens = ({showTokens, setShowTokens}) => {
      const chainId = useChainId()
+     const { selectedToken, setSelectedToken } = useSwapContext()
 
   return (
     <section 
@@ -24,7 +24,12 @@ const BridgeTokens = ({showTokens, setShowTokens}) => {
 
        <div className="w-full flex-row-center gap-[15px]"> 
           { handlingAvailableTokens(chainId).map(token => (
-             <div key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
+             <div 
+               onClick={() => {
+                  setSelectedToken({ name: token.name, logo: token.logo, address: token.address })
+                  setShowTokens(false)
+               }}
+               key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] gap-[5px] flex-row-center cursor-pointer">
                  <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] rounded-[50%]" />
                  <p className="text-[#fff] uppercase text-[.8vmax]"> {token.name} </p>
               </div>
@@ -33,13 +38,18 @@ const BridgeTokens = ({showTokens, setShowTokens}) => {
 
        {/* token lists */}
        <div className="w-full flex flex-col gap-[15px] overflow-y-auto"> 
-           <h3 className="text-[#fff] font-semibold text-[18px] md:text-[22px]"> Select Token </h3>
+           <h3 className="text-[#fff] font-semibold text-[clamp(1rem,1.1vmax,1.2rem)] sticky top-0"> Select Token </h3>
            { handlingAvailableTokens(chainId).map(token => (
               <div key={token.id} 
-                 className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
-                 <aside className="flex-row-center gap-[10px]"> 
-                     <img src={token.logo} alt="token-logo" className="w-[35px] h-[35px] rounded-[50%]" />
-                    <p className="uppercase text-[16px] md:text-[18px] lg:text-[22px]"> {token.name} </p>
+                 className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[15px] rounded-[30px] overflow-hidden"> 
+                 <aside 
+                     onClick={() => {
+                        setSelectedToken({ name: token.name, logo: token.logo, address: token.address })
+                        setShowTokens(false)
+                     }}
+                     className="flex-row-center gap-[10px]"> 
+                     <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] object-cover rounded-[50%]" />
+                    <p className="uppercase text-[clamp(.8rem,1vmax,1.1rem)]"> {token.name} </p>
                  </aside>
 
                  <h4 className="font-semibold text-[16px] md:text-[20px]"> 0 </h4>

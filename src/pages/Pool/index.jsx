@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pool = () => {
   return (
-    <div>Pool</div>
+    <div className='h-[80vh]'>Pool</div>
   )
 }
 

@@ -3,6 +3,7 @@ import { usdt } from '../../assets';
 import { RiHistoryFill } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import {CustomButton} from '../../components';
+import { useSwapContext } from '../ContextApi';
 import BridgeCard from "./BridgeCard"
 import BridgeInfo from "./BridgeInfo"
 import BridgeHistory from './BridgeHistory';
@@ -11,6 +12,7 @@ import BridgeTokens from './BridgeTokens';
 const Bridge = () => {
         const [showTokens, setShowTokens] = useState(false)
         const [showHistory, setShowHistory] = useState(false)
+        const { selectedToken } = useSwapContext()
 
   return (
     <section className={`w-full h-[max-content]`}>
@@ -25,8 +27,8 @@ const Bridge = () => {
                     <div 
                         onClick={() => setShowTokens(true)}
                         className="flex-row-center justify-center w-[fit-content] gap-[5px] bg-secondary rounded-[8px] p-[4px] cursor-pointer">
-                       <img src={usdt} alt="assets" className="w-[25px] h-[25px] object-cover" />
-                       <h4 className='text-[.6vmax] font-bold text-textWhite uppercase'> Usdt </h4>
+                       <img src={selectedToken?.logo} alt="assets" className="w-[25px] h-[25px] object-cover" />
+                       <h4 className='text-[.6vmax] font-bold text-textWhite uppercase'> { selectedToken?.name } </h4>
                        <MdKeyboardArrowDown size={20} className="text-textWhite font-bold" />
                     </div>
                 </div>

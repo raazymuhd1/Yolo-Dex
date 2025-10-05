@@ -2,7 +2,9 @@ import React from 'react'
 
 const Stake = () => {
   return (
-    <div>Stake</div>
+    <section className='h-[max-content]'>
+      <h2> Stake Pools </h2>
+    </section>
   )
 }
 
