@@ -37,16 +37,17 @@ const BridgeTokens = ({showTokens, setShowTokens}) => {
        </div>
 
        {/* token lists */}
-       <div className="w-full flex flex-col gap-[15px] overflow-y-auto"> 
-           <h3 className="text-[#fff] font-semibold text-[clamp(1rem,1.1vmax,1.2rem)] sticky top-0"> Select Token </h3>
+       <div className="w-full flex tokens_scrollbar flex-col gap-[15px] overflow-y-auto"> 
+           <h3 className="text-[#fff] w-full bg-mainAlt p-[5px] z-[10] font-semibold text-[clamp(1rem,1.1vmax,1.2rem)] sticky top-0"> Select Token </h3>
            { handlingAvailableTokens(chainId).map(token => (
-              <div key={token.id} 
-                 className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[15px] rounded-[30px] overflow-hidden"> 
-                 <aside 
-                     onClick={() => {
+              <div 
+                 onClick={() => {
                         setSelectedToken({ name: token.name, logo: token.logo, address: token.address })
                         setShowTokens(false)
-                     }}
+                  }}
+                 key={token.id} 
+                 className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[20px] rounded-[30px] overflow-hidden"> 
+                 <aside 
                      className="flex-row-center gap-[10px]"> 
                      <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] object-cover rounded-[50%]" />
                     <p className="uppercase text-[clamp(.8rem,1vmax,1.1rem)]"> {token.name} </p>

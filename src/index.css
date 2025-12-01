@@ -23,3 +23,15 @@ body {
     backdrop-filter: blur(10px);
     background: rgba(178, 63, 134, 0.62);
 }
+
+
+/* scrollbar styles */
+
+.tokens_scrollbar::-webkit-scrollbar {
+    width: 3px;
+    background-color: #000;
+}
+
+.tokens_scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ff5c57;
+}
