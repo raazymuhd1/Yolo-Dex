@@ -38,7 +38,7 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
           { handlingAvailableTokens(chainId).map(token => (
              <div 
                onClick={() => handleTokenSelection(token)}
-               key={token.id} className="w-[fit-content] bg-secondary rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
+               key={token.id} className="w-[fit-content] bg-secondary hover:bg-[var(--orange-bg)] transition-[background,1.5s,ease-in-out] rounded-[30px] overflow-hidden p-[10px] flex-row-center cursor-pointer">
                  <img src={token.logo} alt="token-logo" className="w-[25px] h-[25px] rounded-[50%]" />
                  <p className="text-[#fff] uppercase text-[.7vmax]"> {token.name} </p>
               </div>
@@ -52,7 +52,7 @@ const TokenAssets = ({showTokens, setShowTokens, selectedToken, setSelectedToken
               <div 
                onClick={() => handleTokenSelection(token)}
                key={token.id} 
-                 className="flex-row-center w-full justify-between bg-secondary cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
+                 className="flex-row-center w-full justify-between bg-secondary hover:bg-[var(--orange-bg)] transition-[background,1.5s,ease-in-out] cursor-pointer text-[#fff] p-[10px] rounded-[30px] overflow-hidden"> 
                  <aside className="flex-row-center gap-[10px]"> 
                      <img src={token.logo} alt="token-logo" className="w-[35px] h-[35px] rounded-[50%]" />
                     <p className="uppercase text-[.9vmax]"> {token.name} </p>

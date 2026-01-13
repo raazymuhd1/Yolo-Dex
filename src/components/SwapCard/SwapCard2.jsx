@@ -59,11 +59,11 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
               onChange={handlingInputAmt}
               type="text" 
               placeholder="0" 
-              className="w-[80%] h-full text-[30px] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
+              className="w-[80%] h-full text-[clamp(1rem,1.5vmax,1.5rem)] md:text-[40px] outline-none text-right placeholder:text-right text-[#fff] bg-transparent" />
         </div>
 
         <div className={`w-full flex items-center justify-between`}> 
-            <h5 className={`cursor-pointer p-[5px] text-[14px] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
+            <h5 className={`cursor-pointer p-[5px] w-[40px] text-center bg-main text-[clamp(.8rem,1.1vmax,1.1rem)] text-[var(--orange-bg)] rounded-[15px] font-bold`}> Max </h5>
             <h5 className="font-bold text-textWhite"> $3,500 </h5>
         </div>
 

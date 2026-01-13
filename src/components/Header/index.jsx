@@ -11,7 +11,7 @@ const Header = () => {
         <nav className="w-[90%] h-full mx-auto flex  items-center justify-between">
             {/* <div className="flex items-center gap-[60px]">
             </div> */}
-            <h2 className=" font-extrabold text-[var(--orange-bg)] text-[2vmax]"> PinkySwap </h2>
+            <h2 className=" font-extrabold text-[var(--orange-bg)] text-[clamp(1.2rem,2vmax,2rem)]"> PinkySwap </h2>
             <Links />
             {/* <Networks /> */}
             <CustomConnectBtn />

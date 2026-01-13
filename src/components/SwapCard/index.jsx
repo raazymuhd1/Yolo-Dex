@@ -80,7 +80,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
               value={inputAmount}
               onChange={(e) => handlingInputAmt(e)}
               placeholder="0" 
-              className="w-[80%] h-fulld outline-none text-right placeholder:text-right text-[#fff] bg-transparent placeholder:text-[2vmax] text-[2vmax]" />
+              className="w-[80%] h-fulld outline-none text-right placeholder:text-right text-[#fff] bg-transparent placeholder:text-[2vmax] text-[clamp(1rem,1.5vmax,1.5rem)]" />
         </div>
 
         {/* bottom section */}
@@ -89,7 +89,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         <div className={`w-full flex items-center justify-between`}> 
             <h5 
               onClick={handlingMaxAmount}
-              className={`cursor-pointer p-[5px] text-[.7vmax] w-[40px] text-center bg-main text-secondaryAlt rounded-[15px] font-bold`}> Max </h5>
+              className={`cursor-pointer p-[5px] text-[clamp(.8rem,1.1vmax,1.1rem)] w-[40px] text-center bg-main text-[var(--orange-bg)] rounded-[15px] font-bold`}> Max </h5>
             <h5 className="font-bold text-[var(--white)] text-[.8vmax]"> $3,500 </h5>
         </div>
 

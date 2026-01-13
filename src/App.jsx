@@ -10,7 +10,7 @@ const App = () => {
   return (
           <WalletProviders> 
               <SwapContextProvider>
-              <main className='h-[80vh] flex flex-col justify-between'>
+              <main className='h-[80vh] flex flex-col justify-between items-center'>
                   <Header />
                     <Routes>
                         <Route path='/' element={<Swap />} />

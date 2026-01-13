@@ -35,18 +35,18 @@ const Settings = ({showSettings, setShowSettings, setSlippage, slippage}) => {
              { presetSlippagePercentage.map((percent, idx) => (
                 <p
                   ref={presetSlippageRef} 
-                  key={idx} onClick={() => handlingSlippagePercentage(percent)} className="percentage-settings">{percent}%</p>
+                  key={idx} onClick={() => handlingSlippagePercentage(percent)} className="percentage-settings placeholder:text-[var(--orange-bg)]">{percent}%</p>
              )) }
             <input
               ref={slippageRef} 
               value={slippage}
               onChange={(e) => setSlippage(e.target.value)}
-              type="text" placeholder="0%" className="w-[100px] bg-main placeholder:text-secondaryAlt p-[8px] rounded-[10px] text-[#fff] border-none outline-none" />
+              type="text" placeholder="0%" className="w-[100px] bg-main placeholder:text-[var(--orange-bg)] p-[8px] rounded-[10px] text-[#fff] border-none outline-none" />
           </aside>
 
           <h4 className="text-[#fff]"> Transaction deadline </h4>
           <aside className="flex items-center gap-[10px]">
-            <input type="text" placeholder="deadline" className="w-[150px] placeholder:text-secondaryAlt bg-main p-[8px] rounded-[10px] focus:border-textOrange focus:border-[1px] text-[#fff] border-none outline-none" />
+            <input type="text" placeholder="deadline" className="w-[150px] placeholder:text-[var(--orange-bg)] bg-main p-[8px] rounded-[10px] focus:border-textOrange focus:border-[1px] text-[#fff] border-none outline-none" />
             <p className="text-[#fff]"> Minutes </p>
           </aside>
 

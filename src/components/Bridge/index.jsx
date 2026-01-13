@@ -15,11 +15,11 @@ const Bridge = () => {
         const { selectedToken } = useSwapContext()
 
   return (
-    <section className={`w-full h-[max-content]`}>
+    <section className={`w-full bg-[var(--orange-bg)] rounded-[5px] h-[max-content]`}>
         {/* bridge main section */}
 
         <div 
-            className={`flex flex-col gap-[20px] xl:w-[30%] mx-auto p-[15px] rounded-[10px] lg:w-[40%] w-[70%] mt-[100px] bg-mainAlt overflow-hidden relative top-0`}>
+            className={`flex flex-col gap-[20px] mx-auto p-[15px] rounded-[3rem] w-full mt-[100px]  overflow-hidden relative top-0 bridge_dark_glass`}>
             {/* bridge header */}
             <aside className="flex-row-center w-full justify-between">
                 <div className="flex w-[50%] items-center gap-[20px]">
@@ -40,7 +40,7 @@ const Bridge = () => {
             <aside className='flex h-[fit-content] w-full flex-col gap-[10px]'>
                 <BridgeCard title="From" />
                 <BridgeCard title="To" />
-                <CustomButton title="Connect Wallet" styles="w-full h-[40px] bg-secondaryAlt text-textOrange text-[#fff] bg-secondary" />
+                <CustomButton title="Connect Wallet" styles="w-full h-[40px] bg-[var(--orange-bg)] text-[var(--white)] bg-[var(--orange-bg)]" />
                 <BridgeInfo />
             </aside>
 

@@ -66,7 +66,7 @@ const Swap = () => {
             <div className="flex w-full h-[80%] flex-col items-center mt-[10px]">
                   <SwapCard tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
                   {/* <div className="h-[60px] w-[60px] bg-secondaryAlt rounded-[50%]"> */}
-                     <MdSwapVerticalCircle size={40} className=" text-secondaryAlt cursor-pointer" />
+                     <MdSwapVerticalCircle size={40} className=" text-[var(--orange-bg)] cursor-pointer" />
                   {/* </div> */}
                   <SwapCard2 tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
             </div>
