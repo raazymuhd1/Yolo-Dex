@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        "main": '#040208',
+        "main": 'rgba(35, 45, 56)',
         "mainAlt": "#111111",
         "secondary": "#232323",
         "secondaryAlt": "#551921",
         "textWhite": "#fff",
-        "textOrange": "#ff5c57"
+        "textOrange": "rgba(251, 100, 111)",
+        "orange-bg": "rgba(251, 100, 111)"
       }
     },
   },

@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: #040208;
-    /* height: 100vh; */
-    overflow-x: hidden;
-}
 
 .btn_trans {
     /* background-color: #eb0e8f; */

@@ -33,7 +33,7 @@ const CustomConnectBtn = () => {
               if (!connected) {
                 return (
                   <button 
-                    className="text-textOrange font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] w-[150px] px-[10px] rounded-[8px]"
+                    className="text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] w-[150px] px-[10px] rounded-[8px]"
                     onClick={openConnectModal} type="button">
                     Connect Wallet
                   </button>
@@ -42,7 +42,7 @@ const CustomConnectBtn = () => {
               if (chain.unsupported) {
                 return (
                   <button 
-                    className="text-textOrange font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px]"
+                    className="text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] px-[10px] rounded-[8px]"
                     onClick={openChainModal} type="button">
                     Wrong network
                   </button>
@@ -53,7 +53,7 @@ const CustomConnectBtn = () => {
                 <div className="flex gap-[12px]">
                   <button
                     onClick={openChainModal}
-                   className='flex items-center text-textOrange font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px] uppercase'
+                   className='flex items-center text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] px-[10px] rounded-[8px] uppercase'
                     type="button"
                   >
                     {chain.hasIcon && (
@@ -73,7 +73,7 @@ const CustomConnectBtn = () => {
                   </button>
 
                   <button 
-                    className='text-textOrange font-semibold text-[.8vmax] bg-secondaryAlt py-[8px] px-[10px] rounded-[8px]'
+                    className='text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] px-[10px] rounded-[8px]'
                     onClick={openAccountModal} type="button">
                     {account.displayName}
                     {account.displayBalance

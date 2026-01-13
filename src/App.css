@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+    --orange-bg: rgba(251, 100, 111);
+    --light-dark: #232d38;
+    --glass-light-dark: rgba(42, 50, 67);
+    --white: #f1f1f1;
+    --grey: #404040;
+}
+
+body {
+    background-color: var(--light-dark);
+}
+
 .aurora-container {
     width: 100%;
     height: 100%;
@@ -82,3 +95,17 @@
     }
 
 }
+
+/* SHADOWS */
+.card_shadows {
+    box-shadow: 2px 2px 60px 4px var(--light-dark), -2px -2px 60px 4px var(--light-dark); 
+}
+
+
+/* SWAP */
+.swap_dark_glass {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    background-color: var(--glass-light-dark);
+}
+

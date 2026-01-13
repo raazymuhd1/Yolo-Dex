@@ -37,10 +37,10 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
 
   return (
     <>
-      <div className="w-full flex flex-col gap-[10px] h-[20%] bg-secondary rounded-[10px] p-[10px]">
+      <div className="w-full flex flex-col gap-[10px] h-[20%] rounded-[3rem] p-[5px] border-[1px] border-secondary">
 
         <div className="flex items-center w-full justify-between p-[5px]"> 
-            <h4 className="uppercase text-textWhite"> To </h4>
+            <h4 className="uppercase font-bold text-[clamp(.8rem,1.3vmax,1.1rem)] text-textWhite"> To </h4>
         </div>
 
         {/* middle section */}
@@ -48,9 +48,9 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
           {/* token lists */}
             <aside
               onClick={() => setShowTokens(true)} 
-              className="w-[30%] border-secondaryAlt border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
+              className="w-[30%] border-[var(--orange-bg)] border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
                 <img src={selectedToken?.logo} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
-                <h4 className="text-[.9vmax] text-[#fff] uppercase"> {selectedToken?.name} </h4>
+                <h4 className="text-[.9vmax] font-bold text-[var(--white)] uppercase"> {selectedToken?.name} </h4>
                 <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
             </aside>
             <input 

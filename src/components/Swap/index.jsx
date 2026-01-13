@@ -54,11 +54,11 @@ const Swap = () => {
    }
 
   return (
-      <section className='w-full min-h-[60vh]'>
+      <section className='w-full'>
 
-         <div className="flex h-[max-content] mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[110px] flex-col rounded-[15px] bg-mainAlt p-[20px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
+         <div className="flex mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[30px] flex-col rounded-[3rem] swap_dark_glass p-[10px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
             <div className="flex items-center justify-between w-full"> 
-               <h2 className='text-[1vmax] text-textWhite'> Swap </h2>
+               <h2 className='text-[clamp(1.2rem,2vmax,2rem)] font-bold text-textWhite'> Swap </h2>
                <VscSettings 
                   onClick={() => setShowSettings(!showSettings)} className="text-[1vmax] cursor-pointer text-textWhite" />
             </div>
@@ -71,9 +71,10 @@ const Swap = () => {
                   <SwapCard2 tokenToTrade={tokenToTrade} updateTokenTrade={updateTokenTrade} />
             </div>
 
+               {/* FEE */}
                <div className="flex w-full items-center justify-between">
-                     <h4 className="font-semibold text-textWhite uppercase"> 1 { tokenToTrade.tokenIn.name } = 0.000 {tokenToTrade.tokenOut.name} ($-) </h4>
-                     <h4  className="font-semibold text-textWhite"> Fee: -- </h4>
+                     <h4 className="font-semibold text-[var(--grey)] uppercase"> 1 { tokenToTrade.tokenIn.name } = 0.000 {tokenToTrade.tokenOut.name} ($-) </h4>
+                     <h4  className="font-semibold text-[var(--grey)]"> Fee: -- </h4>
                </div>
 
                <div className="w-[80%] mx-auto flex items-center gap-[20px]"> 
@@ -81,25 +82,17 @@ const Swap = () => {
                      isDisabled={isAmountEmpty ? true : false} 
                      title={`Approve ${tokenToTrade.tokenIn.name}`} 
                      handleClick={() => tokenApproval(tokenToTrade.tokenIn.address, quoteTrade?.amountIn)}
-                     styles={`${tokenToTrade.tokenIn.amount} bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]`}   />
+                     styles={`${tokenToTrade.tokenIn.amount} bg-[var(--orange-bg)] uppercase cursor-pointer text-[var(--white)] w-[50%]`}   />
                   <CustomButton
                      isDisabled={isAmountEmpty ? true : false} 
                      title="Swap"
                      handleClick={() => setConfirmSwap(true)}
-                     styles={`bg-secondaryAlt text-textOrange uppercase cursor-pointer text-[#fff] w-[50%]`}  />
+                     styles={`bg-[var(--orange-bg)] uppercase cursor-pointer text-[var(--white)] w-[50%]`}  />
                </div>
 
             <Settings slippage={slippage} setSlippage={setSlippage} showSettings={showSettings} setShowSettings={setShowSettings} />
             <ConfirmSwap tokenToTrade={tokenToTrade} confirmSwap={confirmSwap} setConfirmSwap={setConfirmSwap} />
          </div>
-
-         {/* external animations */}
-         <Aurora
-            colorStops={["#551921", "#FF94B4", "#551921"]}
-            blend={1}
-            amplitude={1.0}
-            speed={0.5} 
-         />
 
       </section>
   )
