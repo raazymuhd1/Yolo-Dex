@@ -56,11 +56,11 @@ const Swap = () => {
   return (
       <section className='w-full'>
 
-         <div className="flex mx-auto xl:w-[30%] md:w-[70%] w-[80%] mt-[30px] flex-col rounded-[3rem] swap_dark_glass p-[10px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
+         <div className="flex mx-auto xl:w-[30%] md:w-[40%] w-[90%] mt-[30px] flex-col rounded-[3rem] swap_dark_glass p-[10px] gap-[10px] relative top-0 overflow-hidden z-[1]"> 
             <div className="flex items-center justify-between w-full"> 
                <h2 className='text-[clamp(1.2rem,2vmax,2rem)] font-bold text-textWhite'> Swap </h2>
                <VscSettings 
-                  onClick={() => setShowSettings(!showSettings)} className="text-[1vmax] cursor-pointer text-textWhite" />
+                  onClick={() => setShowSettings(!showSettings)} className="text-[clamp(1rem,1.3vmax,1.5rem)] cursor-pointer text-textWhite" />
             </div>
 
             <div className="flex w-full h-[80%] flex-col items-center mt-[10px]">

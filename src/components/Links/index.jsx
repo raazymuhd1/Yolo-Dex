@@ -3,7 +3,7 @@ import { navlinks } from "../../constants"
 
 const Links = () => {
   return (
-    <ul className="flex items-center gap-[30px] bg-secondary rounded-[15px] p-[10px] overflow-hidden">
+    <ul className="flex items-center md:gap-[30px] bg-secondary rounded-[15px] md:p-[10px] p-[4px] overflow-hidden">
         { navlinks.map(link => (
             <NavLink 
               key={link.id} to={link.url} className={({isActive}) =>

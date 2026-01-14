@@ -61,7 +61,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
         <div className="flex items-center w-full justify-between p-[5px]"> 
             <h4 className="uppercase text-textWhite font-bold text-[clamp(.8rem,1.3vmax,1.1rem)]"> From </h4>
             {/* ${title.toLowerCase() == "from" ? "flex-row-center gap-[5px]" : "hidden"} */}
-            <h3 className={`font-semibold text-[var(--grey)] text-[.7vmax]`}> Balance: <strong className="font-bold text-textWhite text-[.9vmax]"> { "0" || accountBalance.data?.value } </strong> </h3>
+            <h3 className={`font-semibold text-[var(--grey)] text-[clamp(.8rem,1vmax,1rem)]`}> Balance: <strong className="font-bold text-textWhite text-[clamp(.8rem,1vmax,1rem)]"> { "0" || accountBalance.data?.value } </strong> </h3>
         </div>
 
         {/* middle section */}
@@ -70,8 +70,8 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
             <aside
               onClick={() => setShowTokens(true)} 
               className="w-[fit-content] border-[var(--orange-bg)] border-[1px] flex items-center gap-[8px] p-[6px] bg-main rounded-[10px]  cursor-pointer">
-                <img src={selectedToken?.logo} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
-                <h4 className="text-[.9vmax] font-bold text-[#fff] uppercase"> {selectedToken?.name} </h4>
+                <img src={selectedToken?.logo} alt="token-logo" className="h-[clamp(20px,30px,35px)] w-[clamp(20px,30px,35px)] rounded-[50%]" />
+                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-bold text-[#fff] uppercase"> {selectedToken?.name} </h4>
                 <MdOutlineKeyboardArrowDown className="text-[2vmax] text-[#fff]" />
             </aside>
             <input 
@@ -90,7 +90,7 @@ const SwapCard = ({tokenToTrade, updateTokenTrade}) => {
             <h5 
               onClick={handlingMaxAmount}
               className={`cursor-pointer p-[5px] text-[clamp(.8rem,1.1vmax,1.1rem)] w-[40px] text-center bg-main text-[var(--orange-bg)] rounded-[15px] font-bold`}> Max </h5>
-            <h5 className="font-bold text-[var(--white)] text-[.8vmax]"> $3,500 </h5>
+            <h5 className="font-bold text-[var(--white)] text-[clamp(.8rem,1vmax,1rem)]"> $3,500 </h5>
         </div>
 
 

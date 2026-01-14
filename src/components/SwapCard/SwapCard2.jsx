@@ -48,9 +48,9 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
           {/* token lists */}
             <aside
               onClick={() => setShowTokens(true)} 
-              className="w-[30%] border-[var(--orange-bg)] border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
-                <img src={selectedToken?.logo} alt="token-logo" className="h-[35px] w-[35px] rounded-[50%]" />
-                <h4 className="text-[.9vmax] font-bold text-[var(--white)] uppercase"> {selectedToken?.name} </h4>
+              className="w-[fit-content] border-[var(--orange-bg)] border-[1px] flex items-center gap-[8px] p-[8px] bg-main rounded-[10px]  cursor-pointer">
+                <img src={selectedToken?.logo} alt="token-logo" className="h-[clamp(20px,30px,35px)] w-[clamp(20px,30px,35px)] rounded-[50%]" />
+                <h4 className="text-[clamp(.8rem,1vmax,1rem)] font-bold text-[var(--white)] uppercase"> {selectedToken?.name} </h4>
                 <MdOutlineKeyboardArrowDown className="text-[25px] md:text-[35px] text-[#fff]" />
             </aside>
             <input 
@@ -64,7 +64,7 @@ const SwapCard2 = ({tokenToTrade, updateTokenTrade}) => {
 
         <div className={`w-full flex items-center justify-between`}> 
             <h5 className={`cursor-pointer p-[5px] w-[40px] text-center bg-main text-[clamp(.8rem,1.1vmax,1.1rem)] text-[var(--orange-bg)] rounded-[15px] font-bold`}> Max </h5>
-            <h5 className="font-bold text-textWhite"> $3,500 </h5>
+            <h5 className="font-bold text-textWhite text-[clamp(.8rem,1vmax,1rem)]"> $3,500 </h5>
         </div>
 
 

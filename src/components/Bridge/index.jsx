@@ -19,7 +19,7 @@ const Bridge = () => {
         {/* bridge main section */}
 
         <div 
-            className={`flex flex-col gap-[20px] mx-auto p-[15px] rounded-[3rem] w-full mt-[100px]  overflow-hidden relative top-0 bridge_dark_glass`}>
+            className={`flex flex-col gap-[20px] mx-auto p-[15px] rounded-[3rem] w-full mt-[40px] overflow-hidden relative top-0 bridge_dark_glass`}>
             {/* bridge header */}
             <aside className="flex-row-center w-full justify-between">
                 <div className="flex w-[50%] items-center gap-[20px]">

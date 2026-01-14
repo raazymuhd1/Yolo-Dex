@@ -50,10 +50,10 @@ const CustomConnectBtn = () => {
               }
 
               return (
-                <div className="flex gap-[12px]">
+                <div className="flex md:gap-[12px] gap-[5px]">
                   <button
                     onClick={openChainModal}
-                   className='flex items-center text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] px-[10px] rounded-[8px] uppercase'
+                   className='flex min-w-[100px] items-center text-[var(--white)] font-semibold text-[clamp(.8rem,1vmax,1rem)] bg-[var(--orange-bg)] md:py-[8px] py-[4px] md:px-[10px] px-[8px] rounded-[8px] uppercase'
                     type="button"
                   >
                     {chain.hasIcon && (
@@ -62,9 +62,9 @@ const CustomConnectBtn = () => {
                       >
                         {chain.iconUrl && (
                           <img
-                            alt={chain.name ?? 'Chain icon'}
+                            alt={chain.name ?? 'Chain Name'}
                             src={chain.iconUrl}
-                            className="w-[25px] h-[25px] object-cover"
+                            className="w-[clamp(1.5rem,2vmax,2rem)] h-[clamp(1.5rem,2vmax,2rem)] object-cover"
                           />
                         )}
                       </div>
@@ -73,7 +73,7 @@ const CustomConnectBtn = () => {
                   </button>
 
                   <button 
-                    className='text-[var(--white)] font-semibold text-[.8vmax] bg-[var(--orange-bg)] py-[8px] px-[10px] rounded-[8px]'
+                    className='text-[var(--white)] font-semibold text-[clamp(.8rem,1vmax,1rem)] whitespace-nowrap bg-[var(--orange-bg)] md:py-[8px] py-[4px] md:px-[10px] px-[8px] rounded-[8px]'
                     onClick={openAccountModal} type="button">
                     {account.displayName}
                     {account.displayBalance

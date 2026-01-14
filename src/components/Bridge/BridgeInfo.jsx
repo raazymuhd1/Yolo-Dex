@@ -33,10 +33,10 @@ const BridgeInfo = () => {
                 <div className="flex-row-center justify-between w-full">
                     <div className="flex-row-center gap-[5px]">
                     {/* icon */}
-                        <p className='text-textWhite font-normal text-[.8vmax]'> {info.title} </p>
+                        <p className='text-textWhite font-normal text-[clamp(.8rem,1vmax,1rem)]'> {info.title} </p>
                     </div>
 
-                    <h3 className="font-bold text-[.8vmax]  text-textWhite"> {info.value} </h3>
+                    <h3 className="font-bold text-[clamp(.8rem,1vmax,1rem)]  text-textWhite"> {info.value} </h3>
                 </div>
                   <div className={`h-[0.1px] w-full ${idx == 1 ? "block": "hidden"} bg-[#fff]`} />
             </div>
