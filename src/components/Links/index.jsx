@@ -7,7 +7,7 @@ const Links = () => {
         { navlinks.map(link => (
             <NavLink 
               key={link.id} to={link.url} className={({isActive}) =>
-                  isActive ? "active_link bg-[var(--orange-bg)] text-[var(--white)]" : "active_link text-textWhite px-[10px] py-[2px]"}> {link.title}
+                  isActive ? "active_link text-[clamp(1rem,1vmax,1.1rem)] bg-[var(--orange-bg)] text-[var(--white)]" : "active_link text-textWhite px-[10px] py-[2px]"}> {link.title}
             </NavLink>
         )) }
     </ul>
