@@ -91,7 +91,7 @@ body {
 
     /* styled a link */
     .active_link {
-        @apply font-semibold text-[.9vmax] rounded-[10px] py-[4px] px-[15px] hover:bg-[var(--orange-bg)] hover:text-textOrange transition-[background_color] duration-500;
+        @apply font-semibold text-[clamp(1rem,1vmax,1.1rem)] rounded-[10px] py-[4px] px-[15px] hover:bg-[var(--orange-bg)] hover:text-textOrange transition-[background_color] duration-500;
     }
 
 }
