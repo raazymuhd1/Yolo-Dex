@@ -2,10 +2,8 @@ import React from 'react'
 
 const Stake = () => {
   return (
-    <section className='min-h-screen w-full flex flex-col items-center justify-center'>
-      <div className='w-full h-full'>
-        <h2 className='text-[#fff] font-bold'> Stake Pools </h2>
-      </div>
+     <section className='h-[80%] bg-[red] flex flex-col justify-center w-[90%]'>
+       <h2 className='text-[var(--orange-bg)] text-center font-semibold text-[clamp(1.5rem,2vmax,2rem)]'> Work on progress </h2>
     </section>
   )
 }
